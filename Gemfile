@@ -8,6 +8,7 @@ end
 
 
 gem 'pg', '0.20.0'
+gem 'bootstrap-sass'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
