@@ -8,4 +8,6 @@ class User < ApplicationRecord
             format:{with: VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i},
             # 大文字小文字を区別しない一意性の検証のための記述
             uniqueness: {case_sensitive:false}
+  has_secure_password
+  validates :password, presence: true, length: { minimum: 6 }
 end
