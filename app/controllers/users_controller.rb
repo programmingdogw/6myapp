@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Welocome to the Sample App!"
       # リダイレクト先のページでflashという変数に:successというkeyでアクセスした時のメッセージを代入
       redirect_to @user
