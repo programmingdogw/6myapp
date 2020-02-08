@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  # 最初の行は、DBによっては大文字小文字を区別するものもあるため小文字に直して保存を行うようにしている
+  attr_accessor :remember_token
+  # 次の行は、DBによっては大文字小文字を区別するものもあるため小文字に直して保存を行うようにしている
   before_save { self.email = email.downcase}
   validates :name, presence:true, length:{ maximum:50 }
   # 有効メールアドレスのための正規表現
@@ -17,4 +18,26 @@ class User < ApplicationRecord
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  # 永続セッションのためにユーザーをデータベースに記憶する
+  def remember
+    self.remember_token = User.new_token
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
+  
+  # 渡されたトークンがダイジェストと一致したらtrueを返す
+  def authenticated?(remember_token)
+    return false if remember_digest.nil?
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
+  # ユーザーのログイン情報を破棄する
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
+
 end
