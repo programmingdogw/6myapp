@@ -5,14 +5,16 @@
 @import "bootstrap";
 
 .container{
+  background-color: red;
   
 }
+
 
 // ヘッダー
 header{
   position:fixed;
   .container{background-color: blue;
-
+                      
   }
 }
 
