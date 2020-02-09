@@ -4,12 +4,20 @@
 <%= will_paginate %>
 
 <ul class="users">
+<%= render @users %>
+<!--
   <% @users.each do |user| %>
     <li>
       <%= gravatar_for user, size: 50 %>
       <%= link_to user.name, user %>
     </li>
   <% end %>
+  リファクタリング前の記述。分かり易いので残して置く
+  リファクタリング後ここでパーシャル読み込むが、パーシャル先にはeachはない
+  railsが@users渡すと自動でUserオブジェクトのコレクションだから列挙しよう、
+  みたいなことしてくれる
+  -->
+
 </ul>
 
 <%= will_paginate %>
