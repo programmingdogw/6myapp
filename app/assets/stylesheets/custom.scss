@@ -4,6 +4,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.container{
+  
+}
+
 // ヘッダー
 header{
   position:fixed;
@@ -15,7 +19,7 @@ header{
 // ボディ
 .main{
   background-color: yellow;
-  padding-top:60px;  
+  padding-top: 80px;  
 }
 
 
