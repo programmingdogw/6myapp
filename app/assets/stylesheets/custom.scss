@@ -4,8 +4,30 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.container{
-  background-color: red;
+
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px;
+}
+
+.box{
+  background-color: purple;
+  border:2px solid red;
+  color:yellow;
+}
+
+.box1{
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+
+.container-fruid{
+  background-color: blue;
   
 }
 
@@ -13,8 +35,8 @@
 // ヘッダー
 header{
   position:fixed;
-  .container{
-    background-color: blue;  
+  .nav{
+    background-color: red;
   }
 }
 
