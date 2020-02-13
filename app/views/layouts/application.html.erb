@@ -17,12 +17,15 @@
 
       <div class ="main col-xs-7 col-md-9 col-lg-10 container">
         <%= yield %>
-        <%= render 'layouts/footer' %>
+        
       </div>
 
       <div class="sidebar col-xs-5 col-md-3 col-lg-２ container h-100 ">
         <%= render 'layouts/header' %>
+        <%= render 'layouts/footer' %>
       </div>
+
+      
 
       <%# <%= debug(params) if Rails.env.development? %> 
 
