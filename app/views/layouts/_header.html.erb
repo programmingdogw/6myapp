@@ -1,11 +1,11 @@
-<header class="navbar">
+<header class="">
 
-    <ul class="sidebargridcontainer">
-        <li class="sidemenuhome"><%= link_to "ホーム",   root_path %></li>
-        <li class="sidemenuhelp"><%= link_to "ヘルプ",   help_path %></li>
+    <ul class="">
+        <li class="mt-5"><%= link_to "ホーム",   root_path %></li>
+        <li class=""><%= link_to "ヘルプ",   help_path %></li>
         <% if logged_in? %>
-          <li class="sidemenuusers"><%= link_to "ユーザー一覧", users_path %></li>
-          <li class="sidemenuusersdropdown">
+          <li class=""><%= link_to "ユーザー一覧", users_path %></li>
+          <li class="sidedrop">
             <a href="#" class="" data-toggle="">
               アカウント設定 <b class="caret"></b>
             </a>

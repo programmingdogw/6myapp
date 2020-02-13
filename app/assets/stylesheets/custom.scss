@@ -1,54 +1,41 @@
-// 大枠
-.grid{
-  display:grid;
-  background-color: pink;
-  border:solid 1px red;
-  grid-template-columns: repeat(36, 1fr)
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+.container-fruid{
+  background-image:url("rtethjdyrsetgshf_TP_V.jpg") ;
+  height:900px;
+  display:flex;
+  
 }
 
-ul{
-  list-style:none;
-  text-align:center;
+.main{
+  background: rgba(255,255,255,0.4);
+  margin-right:0;
+  width:100%;
+  height:100%;
+  color:black
+}
+
+.sidebar{
+  color:white;
+  background: rgba(0,0,0,0.4);
+}
+
+
+
+
+li{
+  height:50px;
+  list-style: none;
+}
+
+.sidebar{
+  a{
+  color:white;
+  }
 }
 
 a{
-  text-decoration: none;
-  &:link{color:green;}
-  &:hover{color:green;}
-  &:visited{color:green;}
-  &:active{color:green;}
+  color:black;
 }
-
-
-
-// ヘッダー
-
-.navbar{
-  background-color:yellow;
-  grid-column-start:1;
-  grid-column-end:5;
-  grid-row-start: 1;
-  grid-row-end: 12;
-  display:grid;
-  grid-template-columns: 1fr;
-}
-
-.sidebargridcontainer{
-  grid-column-start: 1;
-  grid-row-end: 12;
-
-
-}
-
-.sidemenuhome{
-  background-color: red;
-}
-// header{
-//   display: grid;
-//   border:1px red;
-// }
-
-// body{
-//   display: grid;
-//   border:1px red;
-// }
