@@ -1,17 +1,15 @@
-<header class="navbar navbar-fixed-left">
-  <div class="container-fruid">
-    <%= link_to "ホームへ", root_path %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "ホーム",   root_path %></li>
-        <li><%= link_to "ヘルプ",   help_path %></li>
+<header class="navbar">
+
+    <ul class="sidebargridcontainer">
+        <li class="sidemenuhome"><%= link_to "ホーム",   root_path %></li>
+        <li class="sidemenuhelp"><%= link_to "ヘルプ",   help_path %></li>
         <% if logged_in? %>
-          <li><%= link_to "ユーザー一覧", users_path %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <li class="sidemenuusers"><%= link_to "ユーザー一覧", users_path %></li>
+          <li class="sidemenuusersdropdown">
+            <a href="#" class="" data-toggle="">
               アカウント設定 <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdownmenu">
               <li><%= link_to "プロフィール", current_user %></li>
               <li><%= link_to "登録情報変更", edit_user_path(current_user) %></li>
               <li class="divider"></li>
@@ -24,6 +22,4 @@
           <li><%= link_to "ログイン", login_path %></li>
         <% end %>
       </ul>
-    </nav>
-  </div>
 </header>

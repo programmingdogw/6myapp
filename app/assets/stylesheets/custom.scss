@@ -1,65 +1,54 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-
-
+// 大枠
 .grid{
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 100px;
+  background-color: pink;
+  border:solid 1px red;
+  grid-template-columns: repeat(36, 1fr)
 }
 
-.box{
-  background-color: purple;
-  border:2px solid red;
-  color:yellow;
+ul{
+  list-style:none;
+  text-align:center;
 }
 
-.box1{
-  grid-column-start: 1;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 3;
+a{
+  text-decoration: none;
+  &:link{color:green;}
+  &:hover{color:green;}
+  &:visited{color:green;}
+  &:active{color:green;}
 }
 
-
-.container-fruid{
-  background-color: blue;
-  
-}
 
 
 // ヘッダー
-header{
-  position:fixed;
-  .nav{
-    background-color: red;
-  }
+
+.navbar{
+  background-color:yellow;
+  grid-column-start:1;
+  grid-column-end:5;
+  grid-row-start: 1;
+  grid-row-end: 12;
+  display:grid;
+  grid-template-columns: 1fr;
 }
 
-// ボディ
-.main{
-  background-color: yellow;
-  padding-top: 80px;  
+.sidebargridcontainer{
+  grid-column-start: 1;
+  grid-row-end: 12;
+
+
 }
 
-
-
-// フッター
-
-footer{
-  background-color:green;
-  text-decoration: none;
-  a{
-    color:red;
-  }
+.sidemenuhome{
+  background-color: red;
 }
+// header{
+//   display: grid;
+//   border:1px red;
+// }
 
-
-
-
-
-
+// body{
+//   display: grid;
+//   border:1px red;
+// }
