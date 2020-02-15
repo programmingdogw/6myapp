@@ -7,7 +7,7 @@
     <%= form_for(@user, url:signup_path) do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
+      <%= f.label :名前 %>
       <%= f.text_field :name, class: 'form_control' %>
 
       <%= f.label :email %>
@@ -18,6 +18,11 @@
 
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form_control' %>
+      
+      <%= f.label :生年月日 %>
+      <%= f.date_select :birthdate, use_month_numbers: true %>
+
+
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
