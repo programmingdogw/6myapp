@@ -22,6 +22,11 @@
 
 <%= @user.name%><br>
 <%= @user.birthdate%><br>
+<%- data3 = @user.birthdate
+data4 = @user.deathdate
+difference2 =  (data4.to_time - data3.to_time).to_i
+%>
+<%= difference2 %>秒
 
 
 
