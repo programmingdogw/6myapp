@@ -11,8 +11,8 @@ User.create!(name:  "Example User watawata",
   email: "watawataexample@railstutorial.org",
   password:              "foobarwatawata",
   password_confirmation: "foobarwatawata",
-  birthdate: '1985-08-17'
-  deathdate: '2050-11-19'
+  birthdate: '1985-08-17',
+  deathdate: '2050-11-19',
   admin:true)
 
 # 99.times do |n|
