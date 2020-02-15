@@ -20,7 +20,7 @@
       <%= f.password_field :password_confirmation, class: 'form_control' %>
       
       <%= f.label :生年月日 %>
-      <%= f.date_select :birthdate, use_month_numbers: true %>
+      <%= f.date_select :birthdate, use_month_numbers: true, start_year: 1940, end_year:2120 %>
 
 
 
