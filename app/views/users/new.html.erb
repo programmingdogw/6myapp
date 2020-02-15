@@ -1,6 +1,6 @@
 <%provide(:title, 'Sign up')%>
 
-
+<h1>Sing Up</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -21,8 +21,6 @@
       
       <%= f.label :生年月日 %>
       <%= f.date_select :birthdate, use_month_numbers: true, start_year: 1940, end_year:2120 %>
-
-
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
