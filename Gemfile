@@ -7,7 +7,6 @@ end
 
 
 
-gem 'pg', '0.20.0'
 gem 'bootstrap-sass'
 gem 'bcrypt'
 gem 'jquery-rails'
