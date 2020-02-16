@@ -1,3 +1,4 @@
+<%# js実験 %>
 <p><%= Time.now %></p>
 <p><%= Date.today %></p>
 <% data1 = Date.today
@@ -7,10 +8,4 @@
 <p>あと<%= difference/60 %>分です</p>
 <p>あと<%= difference/60/60 %>時間です</p>
 
-<%= @user.name%><br>
-<%= @user.birthdate%><br>
-<%- data3 = @user.birthdate
-data4 = @user.deathdate
-difference2 =  (data4.to_time - data3.to_time).to_i
-%>
-<%= difference2 %>秒
+
