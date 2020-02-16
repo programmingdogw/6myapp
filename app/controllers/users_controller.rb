@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welocome to the Sample App!"
+      flash[:success] = "ユーザー登録完了です！"
       # リダイレクト先のページでflashという変数に:successというkeyでアクセスした時のメッセージを代入
       redirect_to @user
       # redirect_to user_url(@user)と同じ意味。作成したユーザーのページに遷移する
