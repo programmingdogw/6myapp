@@ -13,7 +13,8 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-  def fuck
+  def 実験
+    ＠user = current_user
   end
   
   
