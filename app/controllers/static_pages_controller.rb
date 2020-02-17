@@ -15,7 +15,10 @@ class StaticPagesController < ApplicationController
 
   def experiment
     @user = current_user
+    @picture = Picture.find(1)
   end
+
+  
   
   
 end

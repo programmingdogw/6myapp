@@ -25,7 +25,7 @@ difference2 =  (data4.to_time - data3.to_time).to_i
 <%# こちらは実験ようページのパスがコンタクトと被っていたのでどうやって飛ぶのかと不思議に思って実験したもの。 %>
 <%# 結論としてはこれで飛べる。コントローラー名とアクション名で行けるので便利だがidがどうなるのか不安 %>
 <%= link_to "ルーティング確認用2experimentへ", :controller=> 'static_pages', :action=> 'experiment' %> <br>
-
+<%= link_to "ルーティング確認用3画像投稿へ", newimage_path, class: "" %> <br>
 
 ここまでがメインコンテンツです
 
