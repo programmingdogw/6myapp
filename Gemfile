@@ -15,6 +15,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rmagick'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -72,6 +73,8 @@ end
 
 group :production do
   gem 'pg', '0.20.0'
+  gem 'cloudinary'
+
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
