@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  has_many :pictures
+  
+
+
   attr_accessor :remember_token
   # 次の行は、DBによっては大文字小文字を区別するものもあるため小文字に直して保存を行うようにしている
   before_save { self.email = email.downcase}

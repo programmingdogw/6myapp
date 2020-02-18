@@ -13,8 +13,12 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
-  def fuck
+  def experiment
+    @user = current_user
+    @picture = Picture.find(1)
   end
+
+  
   
   
 end
