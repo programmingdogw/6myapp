@@ -1,6 +1,14 @@
 class PicturesController < ApplicationController
   require 'pry'
 
+
+  def index
+    @pictures = Picture.all 
+  
+  end
+
+
+
   def new
     @picture = Picture.new
 

@@ -7,13 +7,3 @@ aaa
 <% end %>
 
 
-<%= form_with(model: @picture, url: createimage_path, method: :post, local: true) do |f| %>
- 
-  <%= f.file_field :image %>
-  <%= f.submit '画像をアップロードする' %>
-<% end %>
-
-<%= form_tag({controller: :pictures, action: :create}, { method: :post}) do %>
-  <input type="file_field" id="image" placeholder="画像url">
-  <input type="submit">
-<% end %>
