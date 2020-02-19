@@ -16,3 +16,28 @@
 
 
 
+<div class="">
+  <h1>ようこそクソアプリへ</h1>
+
+  <h2>
+    このアプリは開発中のクソアプリです
+  </h2>
+
+  <%= link_to "ユーザー登録", signup_path, class: "" %>
+</div>
+
+<%= link_to image_tag("", alt: "画像") ,'#' %>
+
+<%= @user.name%><br>
+<%= @user.birthdate%><br>
+
+
+
+<%# こちらは普通のpath指定 %>
+<%= link_to "ルーティング確認用1コンタクトへ", contact_path, class: "" %> <br>
+<%# こちらは実験ようページのパスがコンタクトと被っていたのでどうやって飛ぶのかと不思議に思って実験したもの。 %>
+<%# 結論としてはこれで飛べる。コントローラー名とアクション名で行けるので便利だがidがどうなるのか不安 %>
+<%= link_to "ルーティング確認用2experimentへ", :controller=> 'static_pages', :action=> 'experiment' %> <br>
+<%= link_to "ルーティング確認用3画像投稿へ", newimage_path, class: "" %> <br>
+<%= link_to "ルーティング確認用4画像表示へ", indeximage_path, class: "" %> <br>
+ここまでがメインコンテンツです
