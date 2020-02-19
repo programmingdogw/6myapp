@@ -1,33 +1,9 @@
 <%provide(:title, "ホーム") %>
 
-<div class="">
-  <h1>ようこそクソアプリへ</h1>
 
-  <h2>
-    このアプリは開発中のクソアプリです
-  </h2>
 
-  <%= link_to "ユーザー登録", signup_path, class: "" %>
-</div>
 
-<%= link_to image_tag("", alt: "画像") ,'#' %>
-
-<%= @user.name%><br>
-<%= @user.birthdate%><br>
-<%- data3 = @user.birthdate
-data4 = @user.deathdate
-difference2 =  (data4.to_time - data3.to_time).to_i
-%>
-<%= difference2 %>秒<br>
-
-<%# こちらは普通のpath指定 %>
-<%= link_to "ルーティング確認用1コンタクトへ", contact_path, class: "" %> <br>
-<%# こちらは実験ようページのパスがコンタクトと被っていたのでどうやって飛ぶのかと不思議に思って実験したもの。 %>
-<%# 結論としてはこれで飛べる。コントローラー名とアクション名で行けるので便利だがidがどうなるのか不安 %>
 <%= link_to "ルーティング確認用2experimentへ", :controller=> 'static_pages', :action=> 'experiment' %> <br>
-<%= link_to "ルーティング確認用3画像投稿へ", newimage_path, class: "" %> <br>
-<%= link_to "画像表示へ", indeximage_path, class: "" %> <br>
-ここまでがメインコンテンツです
 
-
-
+  <h1>ようこそ</h1>
+  <%= link_to "ユーザー登録", signup_path, class: "" %>
