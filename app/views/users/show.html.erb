@@ -20,16 +20,19 @@
 <%=@user%><br>
 <%=@user.name%><br>
 <%=@user.birthdate%><br>
+<%=Date.today%><br>
 <%=@user.deathdate%><br>
 <%=@user.birthdate.to_time%><br>
+<%=Date.today.to_time%><br>
 <%=@user.deathdate.to_time%><br>
-<% date1 = @user.birthdate.to_time 
-   date2 = Date.today.to_time
-   date3 = @user.deathdate.to_time
-   
-   difference1 = (date3.to_time - date1.to_time).to_i  %>
-<p>あと<%= difference1 %>秒で死にます</p>
-<p>あと<%= difference1/60 %>分で死にます</p>
-<p>あと<%= difference1/60/60 %>時間で死にます</p>
-<p>あと<%= difference1/60/60/24 %>日で死にます</p>
-<p>あと<%= difference1/60/60/24/12 %>ヶ月で死にます</p>
+
+<% date1 = @user.birthdate.in_time_zone.to_i
+   date2 = Date.today.in_time_zone.to_i
+   date3 = @user.deathdate.in_time_zone.to_i
+   difference = (date3 - date2)  %>
+
+<p>あと<%= difference%>秒で死にます</p>
+<p>あと<%= difference/60 %>分で死にます</p>
+<p>あと<%= difference/60/60 %>時間で死にます</p>
+<p>あと<%= difference/60/60/24 %>日で死にます</p>
+<p>あと<%= difference/60/60/24/12%>ヶ月で死にます</p>
