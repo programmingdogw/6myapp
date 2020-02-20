@@ -61,6 +61,17 @@
 <p>あと<%= difference/60/60/24/30%>ヶ月で死にます</p>
 <p>あと<%= difference/60/60/24/30/12%>年で死にます</p>
 
+<% 
+date4 = date1.to_f
+date5 = date2.to_f
+date6 = date3.to_f
+parcentage = ( (date6 - date5) / (date6 - date4)).round(4)*100
+%>
+
+<p><%= date1 %></p>
+<p><%= date2 %></p>
+<p><%= date3 %></p>
+<p>あと<%= parcentage %>％残っています</p>
 
 
 <% @pictures.each do |picture| %>
