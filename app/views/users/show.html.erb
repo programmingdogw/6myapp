@@ -13,6 +13,11 @@
   </aside>
 </div>
 
+<% if current_user.id = @user.id %>
+<%= link_to "ルーティング確認用4画像表示へ", user_pictures_path(@user), class: "" %> <br>
+<% end %>
+
+<!--コメントアウト 実験用ページとほぼ同じお試しコード
 <% @pictures.each do |picture| %>
   <%= image_tag picture.image, :size =>'120x120' %>
 <% end %>
@@ -50,3 +55,4 @@ parcentage = ( (date6 - date5) / (date6 - date4)).round(4)*100
 <p><%= date2 %></p>
 <p><%= date3 %></p>
 <p>あと<%= parcentage %>％残っています</p>
+-->

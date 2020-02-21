@@ -3,7 +3,8 @@ class PicturesController < ApplicationController
 
 
   def index
-    @pictures = Picture.all
+    @picture = Picture.new
+    @pictures = Picture.where(user_id: params[:user_id])
   end
 
 
@@ -22,6 +23,8 @@ class PicturesController < ApplicationController
     # )
 
     Picture.create(picture_params)
+
+    redirect_to user_pictures_path
     
   end
 

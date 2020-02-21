@@ -33,8 +33,8 @@
 <%# こちらは実験ようページのパスがコンタクトと被っていたのでどうやって飛ぶのかと不思議に思って実験したもの。 %>
 <%# 結論としてはこれで飛べる。コントローラー名とアクション名で行けるので便利だがidがどうなるのか不安 %>
 <%= link_to "ルーティング確認用2experimentへ", :controller=> 'static_pages', :action=> 'experiment' %> <br>
-<%= link_to "ルーティング確認用3画像投稿へ", newimage_path, class: "" %> <br>
-<%= link_to "ルーティング確認用4画像表示へ", indeximage_path, class: "" %> <br>
+<%= link_to "ルーティング確認用3画像投稿へ", new_user_picture_path(@user), class: "" %> <br>
+<%= link_to "ルーティング確認用4画像表示へ", user_pictures_path(@user), class: "" %> <br>
 ここまでがメインコンテンツです
 
 
