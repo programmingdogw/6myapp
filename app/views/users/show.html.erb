@@ -17,6 +17,10 @@
 <%= link_to "投稿した画像一覧へ", user_pictures_path(@user), class: "" %> <br>
 <% end %>
 
+
+<div id="piechart" class="piechart"></div>
+
+
 <!--コメントアウト 実験用ページとほぼ同じお試しコード
 <% @pictures.each do |picture| %>
   <%= image_tag picture.image, :size =>'120x120' %>
