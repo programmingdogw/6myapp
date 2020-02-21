@@ -5,6 +5,7 @@ class PicturesController < ApplicationController
   def index
     @picture = Picture.new
     @pictures = Picture.where(user_id: params[:user_id])
+    @user = User.find_by(id: params[:user_id])
   end
 
 

@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 20200221074420) do
 
   create_table "pictures", force: :cascade do |t|
-    t.string "bestimage"
     t.string "image"
     t.integer "user_id"
     t.datetime "created_at", null: false
@@ -24,7 +23,6 @@ ActiveRecord::Schema.define(version: 20200221074420) do
   create_table "todos", force: :cascade do |t|
     t.text "todo"
     t.text "done"
-    t.text "goal"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -34,6 +32,8 @@ ActiveRecord::Schema.define(version: 20200221074420) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "bestimage"
+    t.text "lifegoal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
