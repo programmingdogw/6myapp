@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :pictures
-  
+  has_many :todos
 
 
   attr_accessor :remember_token

@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   
   
   resources :users do 
-    resources :pictures, only: [:index, :new, :create]    
+    resources :pictures, only: [:index, :new, :create]
+    resources :todos, only: [:index, :new, :create]
   end
   
   
