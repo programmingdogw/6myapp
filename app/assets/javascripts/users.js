@@ -8,11 +8,8 @@ google.setOnLoadCallback(drawChart);
 function drawChart() {
     var data = google.visualization.arrayToDataTable([ //グラフデータの指定
         ['Task', 'Hours per Day'],
-        ['Work',     11],
-        ['Eat',      2],
-        ['Commute',  2],
-        ['Watch TV', 2],
-        ['Sleep',    7]
+        ['残り時間',     11],
+        ['経過時間',    7]
     ]);
     var options = { //オプションの指定
         pieSliceText: 'label',
