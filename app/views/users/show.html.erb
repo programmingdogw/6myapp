@@ -3,10 +3,9 @@
 
 
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-12">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
     </section>
@@ -14,7 +13,7 @@
 </div>
 <%- if @user.image%>
 あなたの人生でのベストショット<br>
-<%= image_tag @user.image, :size =>'400x300' %><br>
+<%= image_tag @user.image, :size =>'380x300' %><br>
 <% end%>
 <%= link_to "投稿した画像一覧へ", user_pictures_path(@user), class: "" %> <br>
 
@@ -23,6 +22,7 @@
 
 
 <div id="piechart" class="piechart"></div>
+
 
 
 

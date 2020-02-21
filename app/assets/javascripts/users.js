@@ -17,4 +17,8 @@ function drawChart() {
     };
     var chart = new google.visualization.PieChart(document.getElementById('piechart')); //グラフを表示させる要素の指定
     chart.draw(data, options);
-}
+    
+    
+    }
+
+
