@@ -15,10 +15,11 @@ Rails.application.routes.draw do
   get '/login', to:'sessions#new'
   post '/login', to:'sessions#create'
   delete '/logout', to:'sessions#destroy'
-  get  '/indeximage',    to: 'pictures#index'
-  get  '/newimage',    to: 'pictures#new'
-  post  '/createimage',    to: 'pictures#create'
-  resources :users 
+  
+  
+  resources :users do 
+    resources :pictures, only: [:index, :new, :create]    
+  end
   
   
 end
