@@ -14,14 +14,14 @@
 <div class="row box">
   <div class="left-right-wrapper">
 
-    <div class=" leftside col-6">
+    <div class=" leftside1 col-6">
       <%- if @user.image%>
       あなたの人生でのベストショット<br>
       <%= image_tag @user.image, :size =>height="380x300" %><br>
       <% end%>
     </div>
 
-    <div class="rightside col-6">
+    <div class="rightside1 col-6">
       <%= link_to "投稿した画像一覧へ", user_pictures_path(@user), class: "" %> <br>
     </div>
 
@@ -32,16 +32,17 @@
 <div class="row box">
   <div class="left-right-wrapper">
 
-    <div class=" leftside col-6">
+    <div class=" leftside2 col-6">
       <div id="piechart" class="piechart"></div>
     </div>
 
-    <div class="rightside col-6">
+    <div class="rightside2 col-6">
       詳細設定へ
     </div>
 
   </div>
 </div>
+
 
 
 

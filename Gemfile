@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-
+gem 'gon'
 gem 'bootstrap-sass'
 gem 'bcrypt'
 gem 'jquery-rails'

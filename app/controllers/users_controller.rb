@@ -12,12 +12,13 @@ class UsersController < ApplicationController
 
 
   def show
-    
-    
     @user = User.find(params[:id])
 
     @pictures = Picture.where(user_id: @user.id)
     
+    gon.time1 = gontime1
+    gon.time2 = gontime2
+
   end
 
 
@@ -90,4 +91,28 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
+
+
+    def gontime1
+      @user = User.find(params[:id])
+      date1 = @user.birthdate.in_time_zone.to_i
+      date2 = Date.today.in_time_zone.to_i
+      date3 = @user.deathdate.in_time_zone.to_i
+      date4 = date1.to_f
+      date5 = date2.to_f
+      date6 = date3.to_f
+      gontime1 = (date5 - date4)
+    end
+
+    def gontime2
+      @user = User.find(params[:id])
+      date1 = @user.birthdate.in_time_zone.to_i
+      date2 = Date.today.in_time_zone.to_i
+      date3 = @user.deathdate.in_time_zone.to_i
+      date4 = date1.to_f
+      date5 = date2.to_f
+      date6 = date3.to_f
+      gontime1 = (date6 - date5)
+    end
+
 end
