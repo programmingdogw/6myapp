@@ -1,5 +1,7 @@
 class TodosController < ApplicationController
 
+  before_action :delete_todo_params, only: [:destroy]
+
   def index
     @todo = Todo.new
     @todos = Todo.where(user_id: params[:user_id])
@@ -19,10 +21,18 @@ class TodosController < ApplicationController
 
   end
 
+  def destroy
+    @todo.delete
+    
+  end
+  
+
   private
     def todo_params
       params.require(:todo).permit(:todo, :user_id)
     end
 
-
+    def delete_todo_params
+      @todo = Todo.find(params[:id])
+    end
 end
