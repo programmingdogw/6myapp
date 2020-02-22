@@ -145,9 +145,17 @@ input {
 }
 
 
+.memoryfield{
+  background-color:lightblue;
+  margin: auto;
+  margin-top: 10px;
+  width:90%;
+  height:90%;
+}
 
 
-// ピクチャーインデックスのフォーム
+
+// ピクチャーインデックスのベストショット更新フォームと写真追加フォーム
 .pictureleftside1{
   width:100%;
   background-color: pink;
@@ -155,7 +163,6 @@ input {
   margin-right:5px;
   padding-left:5px;
   padding-right:5px;
-  
 }
 
 .picturerightside1{
