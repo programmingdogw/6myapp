@@ -1,12 +1,11 @@
 <% provide(:title, @user.name) %>
 
 
-
 <div class="row">
   <aside class="col-md-12">
     <section class="user_info">
       <h1>
-        <%= @user.name %>
+        <%= @user.name %>さんのプロフィール
       </h1>
     </section>
   </aside>
@@ -22,7 +21,25 @@
     </div>
 
     <div class="rightside1 col-6">
-      <%= link_to "投稿した画像一覧へ", user_pictures_path(@user), class: "" %> <br>
+
+      <div class="imagesetting">
+      <button type="button" class="btn btn-default btn-lg mt-5">
+      <%= link_to "投稿した画像一覧へ", user_pictures_path(@user), class: "" %>
+      </button><br>
+      </div>
+
+      <div class="imagesetting">
+      <button type="button" class="btn btn-default btn-lg mt-5">
+      <%= link_to "ホームへ", root_path, class: "" %>
+      </button><br>
+      </div>
+
+      <div class="imagesetting">
+        <div class="memoryfield">
+        ここにベストショットの説明文を入れさせる
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -35,14 +52,22 @@
     <div class=" leftside2 col-6">
       <div id="piechart" class="piechart"></div>
     </div>
+    <div class="rightside2 col-6"> 
+      <input type="button" value="円グラフで見てみる" onclick="window.location.reload();" />
+      <% date1 = @user.birthdate.in_time_zone.to_i
+      date2 = Date.today.in_time_zone.to_i
+      date3 = @user.deathdate.in_time_zone.to_i
+      difference = (date3 - date2)  %>
 
-    <div class="rightside2 col-6">
-      詳細設定へ
+      <p>あと<%= difference%>秒で死にます</p>
+      <p>あと<%= difference/60 %>分で死にます</p>
+      <p>あと<%= difference/60/60 %>時間で死にます</p>
+      <p>あと<%= difference/60/60/24 %>日で死にます</p>
+      <p>あと<%= difference/60/60/24/30%>ヶ月で死にます</p>
     </div>
 
   </div>
 </div>
-
 
 
 

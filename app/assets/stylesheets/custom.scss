@@ -116,6 +116,7 @@ input {
   background-color: pink;
   margin-left:5px;
   margin-right:5px;
+  
 }
 
 .rightside1{
@@ -137,4 +138,38 @@ input {
 }
 .box{
   margin-top: 5px;
+}
+
+.imagesetting{
+  text-align: center;
+}
+
+
+.memoryfield{
+  background-color:lightblue;
+  margin: auto;
+  margin-top: 10px;
+  width:90%;
+  height:90%;
+}
+
+
+
+// ピクチャーインデックスのベストショット更新フォームと写真追加フォーム
+.pictureleftside1{
+  width:100%;
+  background-color: pink;
+  margin-left:5px;
+  margin-right:5px;
+  padding-left:5px;
+  padding-right:5px;
+}
+
+.picturerightside1{
+  width:100%;
+  background-color:rgb(234, 250, 234);
+  margin-left:5px;
+  margin-right:5px;
+  padding-left:5px;
+  padding-right:5px;
 }

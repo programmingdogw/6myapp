@@ -1,24 +1,42 @@
-あなたの投稿写真一覧
+<h1><%=@user.name%> の写真一覧</h1>
 
-あなたのベストショット！一番の写真を投稿する（あなたのページ以外だとホームに戻されるよ）
-<%= form_for(@user) do |f| %>
-  
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  <%= f.submit %>
+<%- if @user == current_user%>
+<div class="row box">
+  <div class="left-right-wrapper">
+
+      <div class=" pictureleftside1 col-6">
+        マイページのベストショットを更新しよう<br>
+        あなたのページだけ更新できるよ
+        <%= form_for(@user) do |f| %>
+          
+          <%= f.label :image %>
+          <%= f.file_field :image %>
+          <%= f.submit %>
+        <% end %>
+    </div>
+
+    <div class=" picturerightside1 col-6">
+      写真投稿してアルバムにしよう<br>
+      下の一覧に追加されるよ<br>
+      <%= form_for(@picture, url: {controller: 'pictures', action: 'create' }) do |f| %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+
+  </div>
+</div>
 <% end %>
+
+<div class="row box">
 
 <% @pictures.each do |picture| %>
                     <%- if picture.image? %>
                     <%= image_tag picture.image, :size =>'120x180' %>
                     <% end %>
             <% end %>
-<br>
-写真投稿してアルバルにしよう
-<%= form_for(@picture, url: {controller: 'pictures', action: 'create' }) do |f| %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.label :image %>
-  <%= f.file_field :image %>
-  <%= f.submit %>
-<% end %>
+</div>
+
  
