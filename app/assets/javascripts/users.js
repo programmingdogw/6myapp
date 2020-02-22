@@ -1,6 +1,8 @@
 $(function(){
   console.log("hahahahaha")
+  
 });
+
 
 
 google.load("visualization", "1", {packages:["corechart"]});
@@ -19,6 +21,8 @@ function drawChart() {
     chart.draw(data, options);
     
     
+
     }
+
 
 
