@@ -36,6 +36,9 @@
       <% @pictures.each do |picture| %>
       <%- if picture.image? %>
       <%= image_tag picture.image, :size =>'600x400' %>
+            <%- if @user == current_user%>
+              <%= link_to "削除", user_picture_path(id:picture.id, user_id:@user.id), method: :delete%>
+            <% end %>
       <% end %>
       <% end %>
   </div>
