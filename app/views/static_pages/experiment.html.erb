@@ -1,4 +1,19 @@
-<%# js実験 %>
+<div class="">
+  <h1>ようこそクソアプリへ</h1>
+
+  <h2>
+    このアプリは開発中のクソアプリです
+  </h2>
+
+  <%= link_to "ユーザー登録", signup_path, class: "" %>
+</div>
+
+<%= link_to image_tag("", alt: "画像") ,'#' %>
+
+
+
+
+<%# 実験 %>
 <p><%= Time.now %></p>
 <p><%= Date.today %></p>
 <% data1 = Date.today
@@ -14,18 +29,6 @@
 
 
 
-<div class="">
-  <h1>ようこそクソアプリへ</h1>
-
-  <h2>
-    このアプリは開発中のクソアプリです
-  </h2>
-
-  <%= link_to "ユーザー登録", signup_path, class: "" %>
-</div>
-
-<%= link_to image_tag("", alt: "画像") ,'#' %>
-
 
 
 <%# こちらは普通のpath指定 %>
@@ -35,6 +38,8 @@
 <%= link_to "ルーティング確認用2experimentへ", :controller=> 'static_pages', :action=> 'experiment' %> <br>
 <%= link_to "ルーティング確認用3画像投稿へ", new_user_picture_path(@user), class: "" %> <br>
 <%= link_to "ルーティング確認用4画像表示へ", user_pictures_path(@user), class: "" %> <br>
+<%= link_to "ルーティング確認用5todo作成へ", new_user_todo_path(@user), class: "" %> <br>
+<%= link_to "ルーティング確認用6todo一覧表示へ", user_todos_path(@user), class: "" %> <br>
 ここまでがメインコンテンツです
 
 

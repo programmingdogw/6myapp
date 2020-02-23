@@ -27,6 +27,10 @@ class PicturesController < ApplicationController
 
     redirect_to user_pictures_path
     
+  end 
+
+
+  def destroy
   end
 
   private

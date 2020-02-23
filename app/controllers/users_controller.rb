@@ -15,7 +15,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     @pictures = Picture.where(user_id: @user.id)
-    
+
+    @todos = Todo.where(user_id: @user.id)
+
     gon.time1 = gontime1
     gon.time2 = gontime2
 
@@ -64,7 +66,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthdate, :deathdate, :image, :lifegoal)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthdate, :deathdate, :image, :lifegoal, :imagetext)
     end
 
     # beforeアクション

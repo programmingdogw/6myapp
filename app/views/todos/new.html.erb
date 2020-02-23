@@ -1,0 +1,8 @@
+todos/new.html.erbだよ
+
+<%= form_for(@todo, url: {controller: 'todos', action: 'create' }) do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.label :todo %>
+  <%= f.text_field :todo %>
+  <%= f.submit %>
+<% end %>
