@@ -53,7 +53,6 @@
       <div id="piechart" class="piechart"></div>
     </div>
     <div class="rightside2 col-6"> 
-      <input type="button" value="円グラフで見てみる" onclick="window.location.reload();" />
       <% date1 = @user.birthdate.in_time_zone.to_i
       date2 = Date.today.in_time_zone.to_i
       date3 = @user.deathdate.in_time_zone.to_i
@@ -64,6 +63,7 @@
       <p>あと<%= difference/60/60 %>時間で死にます</p>
       <p>あと<%= difference/60/60/24 %>日で死にます</p>
       <p>あと<%= difference/60/60/24/30%>ヶ月で死にます</p>
+      <p>あと<%= difference/60/60/24/30/12%>年で死にます</p>
     </div>
 
   </div>
