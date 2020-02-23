@@ -33,7 +33,7 @@ class PicturesController < ApplicationController
   def destroy
     @picture.delete
 
-    redirect_to user_path(id:current_user.id)
+    redirect_to user_pictures_path
   end
 
   private
