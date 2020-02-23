@@ -33,9 +33,11 @@
 
 <div class="row box">
   <div class="slidebox">
-      <div class="b"><%= image_tag @pictures[1].image, :size =>'600x450' %></div>
-      <div class="b"><%= image_tag @pictures[2].image, :size =>'600x450' %></div>
-      <div class="b"><%= image_tag @pictures[3].image, :size =>'600x450' %></div>
+      <% @pictures.each do |picture| %>
+      <%- if picture.image? %>
+      <%= image_tag picture.image, :size =>'400x400' %>
+      <% end %>
+      <% end %>
   </div>
  </div>
 
