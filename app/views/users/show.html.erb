@@ -86,11 +86,11 @@
     </div>
     <div class=" rightside3 col-6">
       <div class="imagesetting">
-      <button type="button" class="btn btn-default btn-lg mt-5">
         <%- if @user == current_user%>
+          <button type="button" class="btn btn-default btn-lg mt-5">
           <%= link_to "todo作成へ", new_user_todo_path(@user), class: "" %> <br>
+          </button><br>
         <% end %>
-      </button><br>
       </div>
     </div>
   </div>
