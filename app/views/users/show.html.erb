@@ -30,9 +30,12 @@
 
 
       <div class="memoryfield">
-        <textarea  rows="10"placeholder="updateのフォームにする">
-
-        </textarea>
+       <%= form_for(@user) do |f| %>
+          <%= render 'shared/error_messages' %>
+          <%= f.label :ベストショットの思い出 %>
+          <%= f.text_area :imagetext, class: 'form-control' %>
+          <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <% end %>
       </div>
 
     </div>
