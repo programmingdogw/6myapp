@@ -24,13 +24,15 @@
 
       <div class="imagesetting">
       <button type="button" class="btn btn-default btn-lg mt-5">
-      <%= link_to "投稿した画像一覧へ", user_pictures_path(@user), class: "" %>
+      <%= link_to "画像投稿へ", user_pictures_path(@user), class: "" %>
       </button><br>
       </div>
 
       <div class="imagesetting">
       <button type="button" class="btn btn-default btn-lg mt-5">
-      <%= link_to "todo一覧表示へ", user_todos_path(@user), class: "" %> <br>
+        <%- if @user == current_user%>
+          <%= link_to "todo作成へ", new_user_todo_path(@user), class: "" %> <br>
+        <% end %>
       </button><br>
       </div>
 
@@ -72,16 +74,20 @@
 <div class="row box">
   <div class="left-right-wrapper">
     <div class=" leftside3 col-6">
-      todoの左側
+    todolist<br>
+    
             <% @todos.each do |todo| %>
             <p>
             <%=todo.todo%>
-            <%= link_to "削除", user_todo_path(id:todo.id, user_id:@user.id), method: :delete%>
+            <%- if @user == current_user%>
+              <%= link_to "削除", user_todo_path(id:todo.id, user_id:@user.id), method: :delete%>
+            <% end %>
             </p>        
             <% end %>
+    
     </div>
     <div class=" rightside3 col-6">
-      todo右側
+      done
     </div>
   </div>
 </div>

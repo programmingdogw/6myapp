@@ -16,13 +16,15 @@ class TodosController < ApplicationController
 
     Todo.create(todo_params)
 
-    # まだ作ってない
-    # redirect_to user_todos_path   
+    
+     redirect_to user_path(id:current_user.id)   
 
   end
 
   def destroy
     @todo.delete
+
+    redirect_to user_path(id:current_user.id)
     
   end
   
