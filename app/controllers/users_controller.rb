@@ -117,4 +117,5 @@ class UsersController < ApplicationController
       gontime1 = (date6 - date5)
     end
 
+
 end
