@@ -8,13 +8,18 @@
     <%= stylesheet_link_tag    'application', media: 'all'%>        
     <%= javascript_include_tag 'application'%>
     <%= render 'layouts/shim' %>
+    <%# スリック用 %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
   </head>
   <body>
     <div class="container-fruid">
 
       <% flash.each do |message_type, message| %>
           <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-        <% end %>
+      <% end %>
 
       <div class ="main col-xs-7 col-md-9 col-lg-10 container">
         <%= yield %>

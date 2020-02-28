@@ -166,7 +166,7 @@ input {
 }
 
 
-// ピクチャーインデックスのベストショット更新フォームと写真追加フォーム
+// ピクチャーズインデックス
 .pictureleftside1{
   width:100%;
   background-color: pink;
@@ -184,3 +184,26 @@ input {
   padding-left:5px;
   padding-right:5px;
 }
+
+.slidebox{
+  margin:auto;
+  width:700px;
+  height:480px;
+}
+.slidebox img{
+  margin:auto;
+  width:400px;
+  height:500px;
+}
+
+
+.miniimage{
+  margin-left:20px;
+}
+
+
+.minideletebtn{
+  background-color: white;
+  margin-left: -35px;
+}
+

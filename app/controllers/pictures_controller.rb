@@ -1,10 +1,10 @@
 class PicturesController < ApplicationController
-  require 'pry'
+  before_action :delete_picture_params, only: [:destroy]
 
 
   def index
     @picture = Picture.new
-    @pictures = Picture.where(user_id: params[:user_id])
+    @pictures = Picture.where(user_id: params[:user_id]).paginate(page:params[:page], per_page:6)
     @user = User.find_by(id: params[:user_id])
   end
 
@@ -31,10 +31,18 @@ class PicturesController < ApplicationController
 
 
   def destroy
+    @picture.delete
+
+    redirect_to user_pictures_path
   end
 
   private
     def picture_params
       params.require(:picture).permit(:image, :user_id)
+    end
+
+
+    def delete_picture_params
+      @picture = Picture.find(params[:id])
     end
 end
