@@ -19,7 +19,7 @@
 
       <% flash.each do |message_type, message| %>
           <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-        <% end %>
+      <% end %>
 
       <div class ="main col-xs-7 col-md-9 col-lg-10 container">
         <%= yield %>

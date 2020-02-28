@@ -187,7 +187,23 @@ input {
 
 .slidebox{
   margin:auto;
-  width:600px;
-  height:600px;
+  width:800px;
+  height:480px;
+}
+.slidebox img{
+  margin:auto;
+  width:400px;
+  height:480px;
+}
+
+
+.miniimage{
+  margin-left:20px;
+}
+
+
+.minideletebtn{
+  background-color: white;
+  margin-left: -35px;
 }
 

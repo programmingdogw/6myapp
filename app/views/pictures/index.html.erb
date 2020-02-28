@@ -36,25 +36,27 @@
       <% @pictures.each do |picture| %>
       <%- if picture.image? %>
       <%= image_tag picture.image, :size =>'600x400' %>
+<!--下に削除ボタン付けたので一旦コメントアウト
             <%- if @user == current_user%>
               <%= link_to "削除", user_picture_path(id:picture.id, user_id:@user.id), method: :delete %>
             <% end %>
+-->
       <% end %>
       <% end %>
   </div>
  </div>
 
-<!--画像一覧をコメントアウト。スライドで削除ボタンつけたので、スライド部分をデカくして、右に寄せる予定
+
+<%= will_paginate %>
 
 <div class="row box">
   <% @pictures.each do |picture| %>
     <%- if picture.image? %>
-    <%= image_tag picture.image, :size =>'180x120' %>
+    <%= image_tag picture.image, :size =>'180x120', class:"miniimage" %>
       <%- if @user == current_user%>
-        <%= link_to "削除", user_picture_path(id:picture.id, user_id:@user.id), method: :delete%>
+        <%= link_to "削除", user_picture_path(id:picture.id, user_id:@user.id), class:"minideletebtn", method: :delete%>
       <% end %>
     <% end %>
   <% end %>
 </div>
 
--->
