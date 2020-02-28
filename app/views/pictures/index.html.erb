@@ -37,13 +37,14 @@
       <%- if picture.image? %>
       <%= image_tag picture.image, :size =>'600x400' %>
             <%- if @user == current_user%>
-              <%= link_to "削除", user_picture_path(id:picture.id, user_id:@user.id), method: :delete%>
+              <%= link_to "削除", user_picture_path(id:picture.id, user_id:@user.id), method: :delete %>
             <% end %>
       <% end %>
       <% end %>
   </div>
  </div>
 
+<!--画像一覧をコメントアウト。スライドで削除ボタンつけたので、スライド部分をデカくして、右に寄せる予定
 
 <div class="row box">
   <% @pictures.each do |picture| %>
@@ -55,3 +56,5 @@
     <% end %>
   <% end %>
 </div>
+
+-->
