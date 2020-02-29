@@ -8,12 +8,18 @@
       </div>
 
       <ul class="ranklist panel-body">
-    
+
+            <%- num = 1 %>
+
         <% @users.each do |user| %>
+
             <li class="list-group-item rankinglist">
-            <%= user.name%>
-            <%= user.point%>
-            </li>        
+            <%= num %>位
+            <%= user.name%>さん
+            <%= user.point%>ポイント
+            </li>
+
+            <%- num += 1 %>
         <% end %>
      </ul>
 
