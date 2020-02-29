@@ -162,8 +162,34 @@ input {
   width:100%;
   margin-left:5px;
   margin-right:5px;
+  padding-bottom:50px;
   background-color: rgb(232, 198, 240);
 }
+
+
+
+.pointbtn{
+  // todolistのポイントが貯まるボタンの予定なのでコメント残しとく
+  background-color: rgb(74, 87, 207);
+  color:white;
+  padding:3px;
+  border-radius: 3px;
+}
+
+
+.todolist{
+  overflow: auto;
+  height:330px;
+  margin: 0px auto;
+}
+
+.pointsdisplay{
+  font-size: large;
+  color: darkgreen;
+  margin-bottom: 0px;
+}
+
+
 
 
 // ピクチャーズインデックス
@@ -188,7 +214,7 @@ input {
 .slidebox{
   margin:auto;
   width:700px;
-  height:480px;
+  height:500px;
 }
 .slidebox img{
   margin:auto;
@@ -207,3 +233,25 @@ input {
   margin-left: -35px;
 }
 
+
+// todo作成ページ newページだがdoneindexを兼ねる
+
+.indextodolist{
+  overflow: auto;
+  height: 700px;
+  margin:auto 10px;
+}
+
+
+.todoform{
+  width:80%;
+  margin:auto;
+}
+
+
+
+
+// その他
+.class_for_space{
+  height:20px;
+}

@@ -88,25 +88,55 @@
 <div class="row box">
   <div class="left-right-wrapper">
     <div class=" leftside3 col-6">
-    todolist<br>
     
+    <div class="panel panel-success">
+      <div class="panel-heading">
+      <h3 class="panel-title">todoリスト</h3>
+      </div>
+      <ul class="todolist ">
+      
             <% @todos.each do |todo| %>
-            <p>
-            <%=todo.todo%>
-            <%- if @user == current_user%>
-              <%= link_to "削除", user_todo_path(id:todo.id, user_id:@user.id), method: :delete%>
+              <%- if todo.todo != nil %>
+              <li class="list-group-item">
+                <%=todo.todo%>
+                <%- if @user == current_user && todo.todo != nil %>
+                  <%= link_to "達成", user_todo_path(id:todo.id, user_id:@user.id), method: :delete, class: "pointbtn"%>
+                <% end %>
+              </li>
+               <% end %>        
             <% end %>
-            </p>        
-            <% end %>
-    
+            
+      </ul>
+      <div class="panel-footer"></div>
+    </div>
+
     </div>
     <div class=" rightside3 col-6">
       <div class="imagesetting">
+
+        <p class="pointsdisplay">合計ポイント<br>
+        <%= @done_point_count%>pt
+        </p>
+        
+
         <%- if @user == current_user%>
           <button type="button" class="btn btn-default btn-lg mt-5">
           <%= link_to "todo作成へ", new_user_todo_path(@user), class: "" %> <br>
           </button><br>
         <% end %>
+
+        <%- if @user == current_user%>
+          <button type="button" class="btn btn-default btn-lg mt-5">
+          <%= link_to "ポイント消費へダミー", "#", class: "" %> <br>
+          </button><br>
+        <% end %>
+
+        <%- if @user == current_user%>
+          <button type="button" class="btn btn-default btn-lg mt-5">
+          <%= link_to "ランキングへダミー", "#", class: "" %> <br>
+          </button><br>
+        <% end %>
+
       </div>
     </div>
   </div>
