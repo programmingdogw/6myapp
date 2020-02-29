@@ -126,12 +126,12 @@
         <% end %>
 
         <%- if @user == current_user%>
-          <button type="button" class="btn btn-default btn-lg mt-5">
+          <div class="pointupdate">
           <%= form_for(@user, url: {controller: 'users', action: 'point' }) do |f| %>
           <%= f.hidden_field :point, :value => @done_point_count %>
-          <%= f.submit "ポイントを使うダミー", class: "" %>
+          <%= f.submit "ポイントを使う", class: "" %>
           <% end %>
-          </button><br>
+          </div><br>
         <% end %>
 
         <%- if @user == current_user%>
