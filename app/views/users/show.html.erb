@@ -125,6 +125,8 @@
           </button><br>
         <% end %>
 
+
+
         <%- if @user == current_user%>
           <div class="pointupdate">
           <%= form_for(@user, url: {controller: 'users', action: 'point' }) do |f| %>
@@ -134,12 +136,18 @@
           </div><br>
         <% end %>
 
+
+
         <%- if @user == current_user%>
-          <button type="button" class="btn btn-default btn-lg mt-5">
-          <%= link_to "ランキングへダミー", "#", class: "" %> <br>
-          </button><br>
+          <div class="pointupdate">
+          <%= form_for(@user, url: {controller: 'users', action: 'rank' }) do |f| %>
+          <%= f.hidden_field :point, :value => @done_point_count %>
+          <%= f.submit "ランキングへ", class: "" %>
+          <% end %>
+          </div><br>
         <% end %>
 
+       
       </div>
     </div>
   </div>

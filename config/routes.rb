@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   
   patch '/point', to:'users#point'
+  patch '/rank', to:'users#rank'
+
 
   resources :users do 
     resources :pictures, only: [:index, :new, :create, :destroy]

@@ -77,6 +77,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def rank
+    
+    if current_user.update_attributes(user_params)
+    else
+      render @user
+    end
+  end
+
   private
 
     def user_params
