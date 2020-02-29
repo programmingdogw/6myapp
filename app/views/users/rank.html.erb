@@ -1,8 +1,23 @@
 ランキングのページ
 
+<div class="ranking">
+    <div class="panel panel-warning">
+
+      <div class="panel-heading">
+      <h3 class="panel-title">達成ポイントランキング</h3>
+      </div>
+
+      <ul class="ranklist panel-body">
+    
         <% @users.each do |user| %>
-            <p>
+            <li class="list-group-item rankinglist">
             <%= user.name%>
             <%= user.point%>
-            </p>        
+            </li>        
         <% end %>
+     </ul>
+
+      <div class="panel-footer"></div>
+
+    </div>
+</div>
