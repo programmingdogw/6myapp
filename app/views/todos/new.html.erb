@@ -1,4 +1,4 @@
-todos/new.html.erbだよ
+
 <div class="todoform">
     <%= form_for(@todo, url: {controller: 'todos', action: 'create' }) do |f| %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
