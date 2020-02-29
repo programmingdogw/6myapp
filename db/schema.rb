@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20200229073625) do
     t.string "name"
     t.string "email"
     t.string "image"
-    t.text "lifegoal"
+    t.integer "point"
     t.text "imagetext"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

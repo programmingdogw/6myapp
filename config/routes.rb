@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   
-
   root 'static_pages#home'
 
   # rootを指定することで相対パスで指定が可能になるっぽい
@@ -18,10 +17,14 @@ Rails.application.routes.draw do
   get '/login', to:'sessions#new'
   post '/login', to:'sessions#create'
   delete '/logout', to:'sessions#destroy'
+
   
+  patch '/point', to:'users#point'
+
   resources :users do 
     resources :pictures, only: [:index, :new, :create, :destroy]
     resources :todos, only: [:index, :new, :create, :destroy]
+    
   end
 
       
