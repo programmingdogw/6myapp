@@ -94,7 +94,7 @@
             <p>
             <%=todo.todo%>
             <%- if @user == current_user && todo.todo != nil %>
-              <%= link_to "削除", user_todo_path(id:todo.id, user_id:@user.id), method: :delete%>
+              <%= link_to "達成", user_todo_path(id:todo.id, user_id:@user.id), method: :delete, class: "pointbtn"%>
             <% end %>
             </p>        
             <% end %>
@@ -102,11 +102,19 @@
     </div>
     <div class=" rightside3 col-6">
       <div class="imagesetting">
+
+        <p>合計ポイント<br>
+        <%= @done_point_count%>
+        </p>
+
+
         <%- if @user == current_user%>
           <button type="button" class="btn btn-default btn-lg mt-5">
           <%= link_to "todo作成へ", new_user_todo_path(@user), class: "" %> <br>
           </button><br>
         <% end %>
+
+
       </div>
     </div>
   </div>
