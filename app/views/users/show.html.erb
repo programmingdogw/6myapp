@@ -97,7 +97,7 @@
       
             <% @todos.each do |todo| %>
               <%- if todo.todo != nil %>
-              <li class="list-group-item">
+              <li class="list-group-item litodoli">
                 <%=todo.todo%>
                 <%- if @user == current_user && todo.todo != nil %>
                   <%= link_to "達成", user_todo_path(id:todo.id, user_id:@user.id), method: :delete, class: "pointbtn"%>
@@ -120,23 +120,34 @@
         
 
         <%- if @user == current_user%>
-          <button type="button" class="btn btn-default btn-lg mt-5">
+          <button type="button" class="btn btn-default btn-lg mb-5">
           <%= link_to "todo作成へ", new_user_todo_path(@user), class: "" %> <br>
           </button><br>
         <% end %>
 
-        <%- if @user == current_user%>
-          <button type="button" class="btn btn-default btn-lg mt-5">
-          <%= link_to "ポイント消費へダミー", "#", class: "" %> <br>
-          </button><br>
-        <% end %>
+
 
         <%- if @user == current_user%>
-          <button type="button" class="btn btn-default btn-lg mt-5">
-          <%= link_to "ランキングへダミー", "#", class: "" %> <br>
-          </button><br>
+          <div class="pointupdate">
+          <%= form_for(@user, url: {controller: 'users', action: 'point' }) do |f| %>
+          <%= f.hidden_field :point, :value => @done_point_count %>
+          <%= f.submit "ポイントを使う", class: "" %>
+          <% end %>
+          </div><br>
         <% end %>
 
+
+
+        <%- if @user == current_user%>
+          <div class="pointupdate">
+          <%= form_for(@user, url: {controller: 'users', action: 'rank' }) do |f| %>
+          <%= f.hidden_field :point, :value => @done_point_count %>
+          <%= f.submit "ランキングへ", class: "" %>
+          <% end %>
+          </div><br>
+        <% end %>
+
+       
       </div>
     </div>
   </div>

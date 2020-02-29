@@ -25,6 +25,8 @@ class UsersController < ApplicationController
     @done_point_count = Todo.where(user_id: @user.id).where(todo: nil).count * 100
 
 
+
+
   end
 
 
@@ -67,10 +69,26 @@ class UsersController < ApplicationController
   end
 
 
+  def point
+    
+    if current_user.update_attributes(user_params)
+    else
+      render @user
+    end
+  end
+
+  def rank
+    
+    if current_user.update_attributes(user_params)
+    else
+      render @user
+    end
+  end
+
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthdate, :deathdate, :image, :lifegoal, :imagetext)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthdate, :deathdate, :image, :lifegoal, :imagetext, :point)
     end
 
     # beforeアクション
