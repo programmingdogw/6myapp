@@ -169,14 +169,19 @@ input {
 
 .pointbtn{
   // todolistのポイントが貯まるボタンの予定なのでコメント残しとく
-  background-color: white;
+  background-color: rgb(74, 87, 207);
+  color:white;
+  padding:3px;
+  border-radius: 3px;
 }
 
 
 .todolist{
   overflow: auto;
-  height:300px;
+  height:330px;
+  margin: 0px auto;
 }
+
 
 
 
