@@ -8,9 +8,13 @@ todos/new.html.erbだよ
 <% end %>
 
 
-
-<% @todos.each do |todo| %>
+<div class="indextodolist">
+  
+  <% @todos.each do |todo| %>
     
-    <%= todo.done %>
-     
+    <ul>  
+      <%= todo.done %>
+    </ul>   
   <% end %>
+  
+</div>
