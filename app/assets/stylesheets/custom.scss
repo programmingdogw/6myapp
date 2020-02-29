@@ -183,7 +183,11 @@ input {
   margin: 0px auto;
 }
 
-
+.pointsdisplay{
+  font-size: large;
+  color:red;
+  margin-bottom: 0px;
+}
 
 
 
@@ -242,4 +246,12 @@ input {
 .todoform{
   width:80%;
   margin:auto;
+}
+
+
+
+
+// その他
+.class_for_space{
+  height:20px;
 }
