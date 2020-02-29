@@ -10,6 +10,7 @@ class TodosController < ApplicationController
   
   def new
     @todo = Todo.new
+    @todos = Todo.where(user_id: params[:user_id]).where(todo: nil)
   end
 
   def create

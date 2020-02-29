@@ -6,3 +6,11 @@ todos/new.html.erbだよ
   <%= f.text_field :todo %>
   <%= f.submit %>
 <% end %>
+
+
+
+<% @todos.each do |todo| %>
+    
+    <%= todo.done %>
+     
+  <% end %>
