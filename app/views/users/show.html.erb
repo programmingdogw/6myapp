@@ -93,7 +93,7 @@
             <% @todos.each do |todo| %>
             <p>
             <%=todo.todo%>
-            <%- if @user == current_user%>
+            <%- if @user == current_user && todo.todo != nil %>
               <%= link_to "削除", user_todo_path(id:todo.id, user_id:@user.id), method: :delete%>
             <% end %>
             </p>        

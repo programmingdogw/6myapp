@@ -22,6 +22,8 @@ class TodosController < ApplicationController
   end
 
   def destroy
+    @todo2 = {  "done" => @todo.todo, "user_id" => current_user.id, "todo" => nil, }
+    Todo.create(@todo2)
     @todo.delete
 
     redirect_to user_path(id:current_user.id)
@@ -31,7 +33,7 @@ class TodosController < ApplicationController
 
   private
     def todo_params
-      params.require(:todo).permit(:todo, :user_id)
+      params.require(:todo).permit(:todo, :user_id, :done)
     end
 
     def delete_todo_params
