@@ -97,7 +97,7 @@
       
             <% @todos.each do |todo| %>
               <%- if todo.todo != nil %>
-              <li class="list-group-item">
+              <li class="list-group-item litodoli">
                 <%=todo.todo%>
                 <%- if @user == current_user && todo.todo != nil %>
                   <%= link_to "達成", user_todo_path(id:todo.id, user_id:@user.id), method: :delete, class: "pointbtn"%>
