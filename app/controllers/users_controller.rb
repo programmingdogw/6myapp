@@ -71,15 +71,19 @@ class UsersController < ApplicationController
 
   def point
     
-    if current_user.update_attributes(user_params)
+    if 
+      current_user.update_attributes(user_params)
+      @user = current_user
+      @done_point_count = Todo.where(user_id: @user.id).where(todo: nil).count * 100
     else
       render @user
     end
   end
 
   def rank
-    
-    if current_user.update_attributes(user_params)
+    if 
+      current_user.update_attributes(user_params)
+      @users = User.all.order(point: :desc)
     else
       render @user
     end

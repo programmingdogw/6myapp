@@ -1,1 +1,8 @@
 ランキングのページ
+
+        <% @users.each do |user| %>
+            <p>
+            <%= user.name%>
+            <%= user.point%>
+            </p>        
+        <% end %>
