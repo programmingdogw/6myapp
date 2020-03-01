@@ -3,10 +3,13 @@
 
 
 <div class="row pointhead">
-        通算<%= @done_point_count%>pt<br>
-        <%- if @user.usedpoint != nil%>
-        残り<%= @leftpoint%>pt<br>
-        <% end %>
+      <%- if @user.usedpoint != nil%>
+        <h1>残りポイント<%= @leftpoint%>pt</h1>
+      <% end %>
+
+        <h1>通算獲得ポイント<%= @done_point_count%>pt</h1>
+
+     
 </div>
 
 
