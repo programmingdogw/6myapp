@@ -15,8 +15,9 @@
   
   <% @todos.each do |todo| %>
 
-    <ul>  
-      <%= todo.done %>
+    <ul>
+      <%= todo.created_at %><br>
+      <%= todo.done %><br>
     </ul>   
   <% end %>
   

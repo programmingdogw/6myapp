@@ -251,6 +251,8 @@ input {
   overflow: auto;
   height: 700px;
   margin:auto 10px;
+  background: rgba(0,0,0,0.4);
+  color:white;
 }
 
 
@@ -273,18 +275,29 @@ input {
 
 // }
 
-.pointleftside{
-  width: 100%;
-  text-align: center;
-  margin: auto;
+.point-left-right-wrapper{
+  display: flex;
+  justify-content: space-between;
 }
+
+.pointleftside{
+  width: 80%;
+  text-align: center;
+  background-color: #7ddaa6;
+  background: rgba(44, 62, 199, 0.4);
+  margin: 10px;
+  height: 900px;
+}
+
 
 .pointrightside{
-  width: 100%;
+  overflow: auto;
+  width: 80%;
   text-align: center;
-  margin: auto;
+  margin: 10px;
+  background: rgba(226, 100, 100, 0.4);
+  color:white;
 }
-
 
 // その他
 .class_for_space{
