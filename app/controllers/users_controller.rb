@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     gon.time2 = gontime2
 
 
-    @done_point_count = Todo.where(user_id: @user.id).where(todo: nil).count * 100
+    @done_point_count = Todo.where(user_id: @user.id).where(todo: nil).count * 1000
 
 
 
@@ -70,14 +70,22 @@ class UsersController < ApplicationController
 
 
   def point
-    
+    @user = current_user
+    @games = Game.all
+        
     if 
       current_user.update_attributes(user_params)
-      @user = current_user
-      @done_point_count = Todo.where(user_id: @user.id).where(todo: nil).count * 100
+      @done_point_count = Todo.where(user_id: @user.id).where(todo: nil).count * 1000
+
+      if current_user.usedpoint != nil 
+      @leftpoint = (@done_point_count - @user.usedpoint)
+      end
+
     else
       render @user
     end
+
+    
   end
 
   def rank
@@ -92,7 +100,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthdate, :deathdate, :image, :lifegoal, :imagetext, :point)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthdate, :deathdate, :image, :lifegoal, :imagetext, :point, :usedpoint)
     end
 
     # beforeアクション

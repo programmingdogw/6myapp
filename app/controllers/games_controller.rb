@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
   def index
+    @games = Game.all
   end
 
   def new
@@ -9,6 +10,8 @@ class GamesController < ApplicationController
   def create
     Game.create(game_params)
   end
+
+  
 
   def destroy
   end
