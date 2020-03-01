@@ -1,0 +1,20 @@
+<h1>Games#new</h1>
+
+<p>ここは管理者がゲーム登録するページになりそう。今のところリンクは実験からだけ</p>
+<p>他のニューページは実験用に置いてるだけの物もあるが、ここtは使うので注意、逆に見た目はどうでもいい</p>
+<p>なので実験ページは不用意に消さずに、管理者用のページを新たに作るなどしてから消すこと</p>
+
+
+ゲーム作成用フォーム
+<%= form_for(@game, url: {controller: 'games', action: 'create' }) do |f| %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.label :ゲーム名 %>
+  <%= f.text_field :name %>
+  <%= f.label :費用 %>
+  <%= f.text_field :cost %>
+  <%= f.submit %>
+<% end %>
+
+
+<p>現在ユーザーidは製作者のidが入るようになっているが、</p>
+<p>購入時に購入したユーザーのidが入るようにすることを忘れないように</p>

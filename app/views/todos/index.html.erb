@@ -2,7 +2,7 @@ todos/index.html.erb
 
 <div class="row box">
 
-<% @todos.each do |todo| %>
+            <% @todos.each do |todo| %>
             <p>
             <%= todo.todo%>
             <%= link_to "削除", user_todo_path(id:todo.id), method: :delete%>

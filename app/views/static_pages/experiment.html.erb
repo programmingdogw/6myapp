@@ -10,6 +10,11 @@
 
 <%= link_to image_tag("", alt: "画像") ,'#' %>
 
+ゲーム作成フォーム
+
+
+
+
 
 
 
@@ -32,6 +37,7 @@
 
 
 
+
 <%# こちらは普通のpath指定 %>
 <%= link_to "ルーティング確認用1コンタクトへ", contact_path, class: "" %> <br>
 <%# こちらは実験ようページのパスがコンタクトと被っていたのでどうやって飛ぶのかと不思議に思って実験したもの。 %>
@@ -41,6 +47,7 @@
 <%= link_to "ルーティング確認用4画像表示へ", user_pictures_path(@user), class: "" %> <br>
 <%= link_to "ルーティング確認用5todo作成へ", new_user_todo_path(@user), class: "" %> <br>
 <%= link_to "ルーティング確認用6todo一覧表示へ", user_todos_path(@user), class: "" %> <br>
+<%= link_to "ルーティング確認用7game作成へ", new_user_game_path(@user), class: "" %> <br>
 ここまでがメインコンテンツです
 
 
