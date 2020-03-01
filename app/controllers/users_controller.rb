@@ -73,8 +73,8 @@ class UsersController < ApplicationController
     @user = current_user
     @games = Game.all
         
-    if 
-      current_user.update_attributes(user_params)
+    if current_user.update_attributes(user_params)
+      
       @done_point_count = Todo.where(user_id: @user.id).where(todo: nil).count * 1000
 
       if current_user.usedpoint != nil 

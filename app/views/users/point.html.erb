@@ -7,8 +7,10 @@
 
 
 
-        <%= @done_point_count%>pt<br>
-        <%= @leftpoint%>pt<br>
+        通算<%= @done_point_count%>pt<br>
+        <%- if @user.usedpoint != nil%>
+        残り<%= @leftpoint%>pt<br>
+        <% end %>
 
         <% @games.each do |game| %>
             <%= game.name%>
@@ -20,7 +22,9 @@
                 <%-  @user.usedpoint = 0 %>
                 <% end %>
                 <%= f.hidden_field :usedpoint, :value => (@user.usedpoint + game.cost) %>
+                <%- if (@user.point - @user.usedpoint) >= game.cost%>
                 <%= f.submit "購入", class: "" %>
+                <% end %>
             <% end %>
             
           <% end %>
