@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   resources :users do 
     resources :pictures, only: [:index, :new, :create, :destroy]
     resources :todos, only: [:index, :new, :create, :destroy]
-    resources :games, only: [:index, :new, :create, :destroy]
+    resources :games, only: [:index, :new, :create, :destroy, :show]
   end
 
       

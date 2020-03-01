@@ -1,33 +1,66 @@
-<p>
-ユーザーのポイント登録後ここに遷移しているはずなので、遷移後にポイントの
-状況を見せたり、ポイントの消費をするための記述等を記載する。
-ランキングもポイント増加を反映する必要があるため、先にランキングを作ってもいいかもしれないし、
-そうでなければランキングに（登録後に）遷移するためのボタンを先に作ってもいいかもしれない
-</p>
 
 
 
-        通算<%= @done_point_count%>pt<br>
-        <%- if @user.usedpoint != nil%>
-        残り<%= @leftpoint%>pt<br>
-        <% end %>
 
-        <% @games.each do |game| %>
-            <%= game.name%>
-            <%= game.cost%>
+<div class="row pointhead">
+      <%- if @user.usedpoint != nil%>
+        <h1>残りポイント<%= @leftpoint%>pt</h1>
+      <% end %>
 
-            <%- if @user == current_user%>
-                <%= form_for(@user, url: {controller: 'users', action: 'point' }) do |f| %>
-                <%- if @user.usedpoint == nil%>
-                <%-  @user.usedpoint = 0 %>
+        <h1>通算獲得ポイント<%= @done_point_count%>pt</h1>
+
+     
+</div>
+
+
+<div class ="row">
+    <div class="point-left-right-wrapper">
+
+
+      <div class="pointleftside col-6">
+          <div class="game-index-head">ゲーム一覧</div>
+
+          <% @games.each do |game| %>
+          
+          <li class="game-index-list">
+                タイトル：<%= game.name%> 
+                <%= game.cost%>ポイント 
+
+                <%- if @user == current_user%>
+                    <%= form_for(@user, url: {controller: 'users', action: 'point' }) do |f| %>
+                    <%- if @user.usedpoint == nil%>
+                    <%-  @user.usedpoint = 0 %>
+                    <% end %>
+                    <%= f.hidden_field :usedpoint, :value => (@user.usedpoint + game.cost) %>
+                    <%- if (@user.point - @user.usedpoint) >= game.cost%>
+                    <%= f.submit "購入", class: "purchasebtn" %>
+                    <% end %>
                 <% end %>
-                <%= f.hidden_field :usedpoint, :value => (@user.usedpoint + game.cost) %>
-                <%- if (@user.point - @user.usedpoint) >= game.cost%>
-                <%= f.submit "購入", class: "" %>
-                <% end %>
-            <% end %>
-            
+                
+              <% end %>
+
+          </li>
+
+                      
           <% end %>
+      </div>
 
-            </p>        
-        <% end %>
+      <div class="pointrightside col-6">
+
+      <div class="purchased-game-head">購入したゲーム</div>
+      
+      <% @usergames.each do |usergame| %>
+      <li class="purchased-game-list">
+              タイトル:<%= usergame.name%><br>
+              <%= link_to "←ゲームを遊ぶ", controller: "games", action: "show", user_id: @user.id, id: usergame.id%> <br>
+      </li>
+      <% end %>
+      
+      
+
+
+      </div>
+
+
+  </div>
+</div>

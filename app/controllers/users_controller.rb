@@ -72,6 +72,7 @@ class UsersController < ApplicationController
   def point
     @user = current_user
     @games = Game.all
+    @usergames = Game.where(user_id: @user.id)
         
     if current_user.update_attributes(user_params)
       
@@ -148,7 +149,7 @@ class UsersController < ApplicationController
       date4 = date1.to_f
       date5 = date2.to_f
       date6 = date3.to_f
-      gontime1 = (date6 - date5)
+      gontime2 = (date6 - date5)
     end
 
 

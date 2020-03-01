@@ -1,6 +1,15 @@
 $(function(){
   console.log("hahahahaha")
+  console.log(gon.time1)
+  console.log(gon.time2)
   
+  
+  // $(function() {
+  //   countDown();
+  // });
+ 
+ 
+
   });
 
 
@@ -23,7 +32,17 @@ function drawChart() {
     chart.draw(data, options);
 
    
-    }
+    };
 
 
 
+
+
+// function countDown() {
+    
+    
+//     $("#TimeLeft").text(gon.time2);
+//     gon.time2 = gon.time2 - 1
+//     setTimeout('countDown()', 1000);
+    
+// };
