@@ -149,7 +149,7 @@ class UsersController < ApplicationController
       date4 = date1.to_f
       date5 = date2.to_f
       date6 = date3.to_f
-      gontime1 = (date6 - date5)
+      gontime2 = (date6 - date5)
     end
 
 
