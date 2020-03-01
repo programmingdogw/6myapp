@@ -15,14 +15,16 @@
 
 <div class ="row">
     <div class="point-left-right-wrapper">
+
+
       <div class="pointleftside col-6">
+          <div class="game-index-head">ゲーム一覧</div>
 
           <% @games.each do |game| %>
-
           
-          <li>
-                <%= game.name%>
-                <%= game.cost%>
+          <li class="game-index-list">
+                タイトル：<%= game.name%> 
+                <%= game.cost%>ポイント 
 
                 <%- if @user == current_user%>
                     <%= form_for(@user, url: {controller: 'users', action: 'point' }) do |f| %>
@@ -31,7 +33,7 @@
                     <% end %>
                     <%= f.hidden_field :usedpoint, :value => (@user.usedpoint + game.cost) %>
                     <%- if (@user.point - @user.usedpoint) >= game.cost%>
-                    <%= f.submit "購入", class: "" %>
+                    <%= f.submit "購入", class: "purchasebtn" %>
                     <% end %>
                 <% end %>
                 
@@ -45,12 +47,15 @@
 
       <div class="pointrightside col-6">
 
-      購入したゲーム<br>
+      <div class="purchased-game-head">購入したゲーム</div>
+      
       <% @usergames.each do |usergame| %>
-              <%= usergame.name%><br>
-              <%= link_to "ゲームを遊ぶ", controller: "games", action: "show", user_id: @user.id, id: usergame.id%> <br>
-
+      <li class="purchased-game-list">
+              タイトル:<%= usergame.name%><br>
+              <%= link_to "←ゲームを遊ぶ", controller: "games", action: "show", user_id: @user.id, id: usergame.id%> <br>
+      </li>
       <% end %>
+      
       
 
 

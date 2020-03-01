@@ -283,8 +283,14 @@ input {
   justify-content: space-between;
 }
 
+
+.game-index-head{
+  background-color: lightgray;
+}
+
+
 .pointleftside{
-  width: 80%;
+  width: 100%;
   text-align: center;
   background-color: #7ddaa6;
   background: rgba(44, 62, 199, 0.4);
@@ -292,15 +298,37 @@ input {
   height: 900px;
 }
 
+.game-index-list{
+  margin-top:10px;
+  margin-bottom: 20px;
+}
+
+.purchasebtn{
+  width: 33%;
+  }
+
+
+.purchased-game-head{
+  background-color: black;
+}
+
+.purchased-game-list{
+  display:flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-left: 20px;
+}
 
 .pointrightside{
   overflow: auto;
-  width: 80%;
+  width: 100%;
   text-align: center;
   margin: 10px;
   background: rgba(226, 100, 100, 0.4);
   color:white;
 }
+
+
 
 // その他
 .class_for_space{
