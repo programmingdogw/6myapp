@@ -7,27 +7,50 @@
 
 
 
+<div class="row pointhead">
         通算<%= @done_point_count%>pt<br>
         <%- if @user.usedpoint != nil%>
         残り<%= @leftpoint%>pt<br>
         <% end %>
+</div>
 
-        <% @games.each do |game| %>
-            <%= game.name%>
-            <%= game.cost%>
 
-            <%- if @user == current_user%>
-                <%= form_for(@user, url: {controller: 'users', action: 'point' }) do |f| %>
-                <%- if @user.usedpoint == nil%>
-                <%-  @user.usedpoint = 0 %>
-                <% end %>
-                <%= f.hidden_field :usedpoint, :value => (@user.usedpoint + game.cost) %>
-                <%- if (@user.point - @user.usedpoint) >= game.cost%>
-                <%= f.submit "購入", class: "" %>
-                <% end %>
+<div class ="row">
+    <div class="left-right-wrapper">
+      <div class="pointleftside col-6">
+
+          <% @games.each do |game| %>
+              <%= game.name%>
+              <%= game.cost%>
+
+              <%- if @user == current_user%>
+                  <%= form_for(@user, url: {controller: 'users', action: 'point' }) do |f| %>
+                  <%- if @user.usedpoint == nil%>
+                  <%-  @user.usedpoint = 0 %>
+                  <% end %>
+                  <%= f.hidden_field :usedpoint, :value => (@user.usedpoint + game.cost) %>
+                  <%- if (@user.point - @user.usedpoint) >= game.cost%>
+                  <%= f.submit "購入", class: "" %>
+                  <% end %>
+              <% end %>
+              
             <% end %>
-            
-          <% end %>
 
-            </p>        
-        <% end %>
+                      
+          <% end %>
+      </div>
+
+      <div class="pointrightside col-6">
+
+      購入したゲーム<br>
+      <% @usergames.each do |usergame| %>
+              <%= usergame.name%><br>
+      <% end %>
+      
+
+
+      </div>
+
+
+  </div>
+</div>
