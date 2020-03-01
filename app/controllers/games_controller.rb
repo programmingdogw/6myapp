@@ -11,7 +11,10 @@ class GamesController < ApplicationController
     Game.create(game_params)
   end
 
-  
+  def show
+    @user = User.find(params[:user_id])
+    @game = Game.find(params[:id])
+  end
 
   def destroy
   end

@@ -48,6 +48,8 @@
       購入したゲーム<br>
       <% @usergames.each do |usergame| %>
               <%= usergame.name%><br>
+              <%= link_to "ゲームを遊ぶ", controller: "games", action: "show", user_id: @user.id, id: usergame.id%> <br>
+
       <% end %>
       
 
