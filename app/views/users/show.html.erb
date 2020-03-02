@@ -56,7 +56,7 @@
 
     <div class="rightside2 col-3"> 
 
-    <%# 残り時間計算パート コントローラーで計算してjsの関数で表示しているのでrightside2の左半分の数値が不要なら不要%>
+    <%# 残り時間計算パート コントローラーで計算してjsの関数で表示しているのでrightside2の左半分の数値が不要なら不要。戻す時はcol数に注意%>
       <% date1 = @user.birthdate.to_time.to_i
       date2 = Time.now.to_time.to_i
       date3 = @user.deathdate.to_time.to_i
@@ -78,16 +78,27 @@
 
     -->
 
-    <div class="rightside2 col-3"> 
-        <div>カウントダウン中</div>
-        <div id="TimeLeft"></div>
-        <div>秒後に死にます</div>
-        <div>睡眠・通勤・勤務時間を除くとあと</div>
-        <div id="TimeLeft2"></div>
-        <div>秒ほど残されています</div>
-         <%- if @user == current_user%>
-          <%= link_to "登録情報変更へ", edit_user_path(current_user) %>
-        <% end %>
+    <div class="rightside2 col-6"> 
+        <div class="countdowntitle"> カウントダウン中</div>
+
+        <div class="firstcount">
+          あなたはあと
+          <div id="TimeLeft"></div>
+          秒くらいで死にます
+        </div>
+
+        <div class="secondcount">
+          睡眠・通勤・勤務時間を除くとあと
+          <div id="TimeLeft2"></div>
+          秒ほど残されています
+        </div>
+
+        <div class="editbtnpart">
+          <%- if @user == current_user%>
+            <%= link_to "登録情報変更へ", edit_user_path(current_user), class: "charteditbtn" %>
+          <% end %>
+        </div>
+
     </div>
 
     
