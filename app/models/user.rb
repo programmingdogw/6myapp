@@ -3,6 +3,8 @@ class User < ApplicationRecord
 
   has_many :pictures
   has_many :todos
+  has_many :user_games
+  has_many :games, through: :user_games
 
 
   attr_accessor :remember_token

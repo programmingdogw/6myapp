@@ -73,7 +73,7 @@ class UsersController < ApplicationController
     @user = current_user
     @games = Game.all
     
-    @usergames = Game.where(user_id: @user.id) 
+    @usergames = Game.where(id: @user.id) 
         
     if current_user.update_attributes(user_params)
       
