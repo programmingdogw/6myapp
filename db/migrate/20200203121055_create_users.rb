@@ -7,6 +7,9 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.integer :point
       t.integer :usedpoint
       t.text :imagetext
+      t.float :sleepingtime
+      t.float :commutingtime
+      t.float :workingtime
       t.timestamps
     end
   end

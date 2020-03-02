@@ -107,7 +107,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthdate, :deathdate, :image, :lifegoal, :imagetext, :point, :usedpoint)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :birthdate, :deathdate, :image, :lifegoal, :imagetext, :point, :usedpoint, :sleepingtime, :commutingtime, :workingtime)
     end
 
     # beforeアクション

@@ -52,6 +52,9 @@ ActiveRecord::Schema.define(version: 20200302034352) do
     t.integer "point"
     t.integer "usedpoint"
     t.text "imagetext"
+    t.float "sleepingtime"
+    t.float "commutingtime"
+    t.float "workingtime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
