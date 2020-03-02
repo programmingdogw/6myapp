@@ -8,7 +8,10 @@ $(function(){
     countDown();
   });
  
- 
+
+  $(function() {
+    countDown2();
+  });
 
   });
 
@@ -48,4 +51,14 @@ function countDown() {
     gon.time2 = gon.time2 - 1
     setTimeout('countDown()', 1000);
     
+}; 
+
+
+function countDown2() {
+    
+    
+  $("#TimeLeft2").text(gon.time7);
+  gon.time7 = gon.time7 - 1
+  setTimeout('countDown2()', 1000);
+  
 }; 

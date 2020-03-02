@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     gon.time4 = gontime4
     gon.time5 = gontime5
     gon.time6 = gontime6
+    gon.time7 = gontime6.floor
 
 
     @done_point_count = Todo.where(user_id: @user.id).where(todo: nil).count * 1000
