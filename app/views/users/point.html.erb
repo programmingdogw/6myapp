@@ -25,6 +25,7 @@
           <li class="game-index-list">
                 タイトル：<%= game.name%> 
                 <%= game.cost%>ポイント 
+                id<%= game.id%>
 
                 <%- if @user == current_user%>
                     <%= form_for(@user, url: {controller: 'users', action: 'point' }) do |f| %>
@@ -32,6 +33,7 @@
                     <%-  @user.usedpoint = 0 %>
                     <% end %>
                     <%= f.hidden_field :usedpoint, :value => (@user.usedpoint + game.cost) %>
+                    <%= f.hidden_field :game_id, :value => game.id  %>
                     <%- if (@user.point - @user.usedpoint) >= game.cost%>
                     <%= f.submit "購入", class: "purchasebtn" %>
                     <% end %>

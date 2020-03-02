@@ -37,12 +37,10 @@ ActiveRecord::Schema.define(version: 20200302034352) do
   end
 
   create_table "user_games", force: :cascade do |t|
-    t.integer "game_id"
     t.integer "user_id"
+    t.integer "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["game_id"], name: "index_user_games_on_game_id"
-    t.index ["user_id"], name: "index_user_games_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

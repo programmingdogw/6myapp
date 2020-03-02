@@ -71,7 +71,10 @@ class UsersController < ApplicationController
 
   def point
     @user = current_user
-    @games = Game.all
+    @games = Game.all 
+    @gameid = params[:user][:game_id]
+
+    UserGame.create(user_id:current_user.id, game_id:@gameid)
     
     @usergames = Game.where(id: @user.id) 
         
@@ -152,6 +155,6 @@ class UsersController < ApplicationController
       date6 = date3.to_f
       gontime2 = (date6 - date5)
     end
-
+ 
 
 end
