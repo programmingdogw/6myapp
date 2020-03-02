@@ -8,7 +8,7 @@
       
       <%= render 'shared/error_messages' %>
       
-      <%= f.label :名前 %>
+      <%= f.label :ニックネーム %>
       <%= f.text_field :name, class: 'form_control' %>
 
       <%= f.label :email %>
@@ -26,7 +26,16 @@
       <%= f.label :死亡予定日 %>
       <%= f.date_select :deathdate, use_month_numbers: true, start_year: 2020, end_year:2120, class: 'form_control'%>
       
-      
+      <%= f.label :１日何時間寝ますか？ %>
+      <%= f.number_field :sleepingtime, step: "0.1" %>
+
+      <%= f.label :１日何時間通勤に使いますか？ %>
+      <%= f.number_field :commutingtime, step: "0.1" %>
+
+      <%= f.label :１日何時間働きますか？ %>
+      <%= f.number_field :workingtime, step: "0.1" %>
+
+
       <%= f.submit "Create my account", class: "btn btn-primary" %>
 
     <% end %>

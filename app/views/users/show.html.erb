@@ -49,14 +49,24 @@
 <div class="row box">
   <div class="left-right-wrapper">
 
-    <div class=" leftside2 col-6">
+    <div class=" leftside2 col-8">
       <div id="piechart" class="piechart"></div>
     </div>
+    <!-- 一旦コメントアウト中
+
     <div class="rightside2 col-3"> 
+
+    <%# 残り時間計算パート コントローラーで計算してjsの関数で表示しているのでrightside2の左半分の数値が不要なら不要%>
       <% date1 = @user.birthdate.to_time.to_i
       date2 = Time.now.to_time.to_i
       date3 = @user.deathdate.to_time.to_i
-      difference = (date3 - date2)  %>
+      difference = (date3 - date2)  
+      date4 = date1.to_f
+      date5 = date2.to_f
+      date6 = date3.to_f
+      truelefttime = ((date6 - date5) * (24.0 - @user.sleepingtime - @user.commutingtime - @user.workingtime) ) / 24.0
+      %>
+    <%# 残り時間計算終了 %>
 
       <p>あと<%= difference%>秒で死にます</p>
       <p>あと<%= difference/60 %>分で死にます</p>
@@ -66,9 +76,18 @@
       <p>あと<%= difference/60/60/24/30/12%>年で死にます</p>
     </div>
 
+    -->
+
     <div class="rightside2 col-3"> 
-      <p>あと<%= difference %>秒で死にます</p>
-      <div id="TimeLeft"></div>
+        <div>カウントダウン中</div>
+        <div id="TimeLeft"></div>
+        <div>秒後に死にます</div>
+        <div>睡眠・通勤・勤務時間を除くとあと</div>
+        <div id="TimeLeft2"></div>
+        <div>秒ほど残されています</div>
+         <%- if @user == current_user%>
+          <%= link_to "登録情報変更へ", edit_user_path(current_user) %>
+        <% end %>
     </div>
 
     

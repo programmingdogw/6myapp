@@ -4,11 +4,14 @@ $(function(){
   console.log(gon.time2)
   
   
-  // $(function() {
-  //   countDown();
-  // });
+  $(function() {
+    countDown();
+  });
  
- 
+
+  $(function() {
+    countDown2();
+  });
 
   });
 
@@ -21,7 +24,10 @@ google.setOnLoadCallback(drawChart);
 function drawChart() {
     var data = google.visualization.arrayToDataTable([ //グラフデータの指定
         ['Task', 'Hours per Day'],
-        ['残り人生',     gon.time2],
+        ['残り時間',     gon.time6],
+        ['勤務時間',     gon.time5],
+        ['通勤時間',     gon.time4],
+        ['睡眠時間',     gon.time3],
         ['経過人生',    gon.time1]
     ]);
     var options = { //オプションの指定
@@ -38,11 +44,21 @@ function drawChart() {
 
 
 
-// function countDown() {
+function countDown() {
     
     
-//     $("#TimeLeft").text(gon.time2);
-//     gon.time2 = gon.time2 - 1
-//     setTimeout('countDown()', 1000);
+    $("#TimeLeft").text(gon.time2);
+    gon.time2 = gon.time2 - 1
+    setTimeout('countDown()', 1000);
     
-// };
+}; 
+
+
+function countDown2() {
+    
+    
+  $("#TimeLeft2").text(gon.time7);
+  gon.time7 = gon.time7 - 1
+  setTimeout('countDown2()', 1000);
+  
+}; 
