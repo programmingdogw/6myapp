@@ -72,7 +72,8 @@ class UsersController < ApplicationController
   def point
     @user = current_user
     @games = Game.all
-    @usergames = Game.where(user_id: @user.id)
+    
+    @usergames = Game.where(user_id: @user.id) 
         
     if current_user.update_attributes(user_params)
       
@@ -83,7 +84,7 @@ class UsersController < ApplicationController
       end
 
     else
-      render @user
+      render @user 
     end
 
     
