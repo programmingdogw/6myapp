@@ -76,7 +76,9 @@ class UsersController < ApplicationController
 
     UserGame.create(user_id:current_user.id, game_id:@gameid)
     
-    @usergames = Game.where(id: @user.id) 
+    usergames = UserGame.where(user_id:current_user.id).select(:game_id)
+
+    @usergames = Game.where(id: usergames)
         
     if current_user.update_attributes(user_params)
       
