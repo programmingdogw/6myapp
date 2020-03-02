@@ -13,6 +13,9 @@ User.create!(name:  "Example User watawata",
   password_confirmation: "foobarwatawata",
   birthdate: '1985-08-17',
   deathdate: '2050-11-19',
+  sleepingtime: '7.0',
+  commutingtime: '1.0',
+  workingtime: '8.0',
   admin:true)
 
 # 99.times do |n|

@@ -23,9 +23,12 @@
           <% @games.each do |game| %>
           
           <li class="game-index-list">
-                タイトル：<%= game.name%> 
-                <%= game.cost%>ポイント 
-                id<%= game.id%>
+          
+              <div class="title-and-cost">
+              <div class="gametitle">  タイトル：<%= game.name%> </div> 
+              <div class="gamecost">  価格:<%= game.cost%>ポイント </div>
+              </div> 
+                
 
                 <%- if @user == current_user%>
                     <%= form_for(@user, url: {controller: 'users', action: 'point' }) do |f| %>
