@@ -17,13 +17,13 @@
   </div>
 
   <div class ="row text-center">
-  <button type="button" class="btn btn-danger btn-lg mt-5">
-  <%= link_to "ログアウトダミー", root_path, class: "" %>
+  <button type="button" class="btn btn-success btn-lg mt-5">
+  <%= link_to "マイページ", current_user, class: "" %>
   </button>
   </div>
 
   <div class ="row text-center">
-  <button type="button" class="btn btn-default btn-lg mt-5">
-  <%= link_to "自分の部屋へダミー", root_path, class: "" %>
+  <button type="button" class="btn btn-danger btn-lg mt-5">
+  <%= link_to "ログアウト", logout_path, method: :delete %>
   </button>
   </div>
