@@ -10,6 +10,11 @@
   
 }
 
+header{
+  min-width: 200px;
+}
+
+
 .main{
   background: rgba(255,255,255,0.4);
   margin-right:0;
@@ -355,6 +360,20 @@ input {
 }
 
 
+// ユーザー一覧
+.userindexcontainer{
+  min-width: 400px;
+}
+
+.indexuserwrapper{
+  display: flex;
+}
+
+.indexusername{
+  text-align: center;
+  width:180px;
+}
+
 
 // その他
 .class_for_space{
@@ -364,7 +383,4 @@ input {
 .litodoli{
   overflow-x: auto;
 }
-
-
-
 

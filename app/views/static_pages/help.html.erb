@@ -1,3 +1,40 @@
 <%provide(:title, "ヘルプ")%>
     <h3>本来ヘルプページだが、現在ユーザー一覧のグリッド組む実験中</h3>
+
+    <%# <%= will_paginate %> %>
+<div class="container">
+
+    <div class="row box">
+
+    <% @users.each do |user| %>
+                    
+                <%- if user.image? %>
+
+                    <%= image_tag user.image, :size =>'180x180', class:"" %>
+                <% else %>
+                    <%= image_tag 'noimage.png', :size =>'180x180', class:"" %>
+            
+                <% end %> 
+
+    <% end %>
+
+    </div>
+
+    <div class="row box">
+        <div class= indexuserwrapper>
+            <% @users.each do |user| %>
+            
+                <div class="indexusername">
+                <%= link_to user.name, user %>
+                </div >
+            
+            <% end %>
+        </div>
+    </div>
+
+
+
+</div>
+
+
     

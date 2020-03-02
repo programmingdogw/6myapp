@@ -3,21 +3,62 @@
 
 <div class="pagenation"><%= will_paginate %> </div>
 
-<ul class="users">
-<%= render @users %>
-<!--
-  <% @users.each do |user| %>
-    <li>
-      <%= gravatar_for user, size: 50 %>
-      <%= link_to user.name, user %>
-    </li>
-  <% end %>
-  リファクタリング前の記述。分かり易いので残して置く
-  リファクタリング後ここでパーシャル読み込むが、パーシャル先にはeachはない
-  railsが@users渡すと自動でUserオブジェクトのコレクションだから列挙しよう、
-  みたいなことしてくれる
-  -->
+<div class="container userindexcontainer">
 
-</ul>
+    <div class="row box">
 
-<%# <%= will_paginate %> 
+    <% @users.each do |user| %>
+                    
+                <%- if user.image? %>
+
+                    <%= image_tag user.image, :size =>'180x180', class:"" %>
+                <% else %>
+                    <%= image_tag 'noimage.png', :size =>'180x180', class:"" %>
+            
+                <% end %> 
+
+    <% end %>
+
+    </div>
+
+    <div class="row box">
+        <div class= indexuserwrapper>
+            <% @users.each do |user| %>
+            
+                <div class="indexusername">
+                <%= link_to user.name, user %>
+                </div >
+            
+            <% end %>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<!--こちらはgravatarを使って一覧表示する用の記述。bootstrapがうまくいかない時はこれに戻す
+  <ul class="users">
+  <%= render @users %>
+  </ul>
+
+-->
+
+  <!-- こちらは元々コメントアウトしていた物で元来不要
+    <% @users.each do |user| %>
+      <li>
+        <%= gravatar_for user, size: 50 %>
+        <%= link_to user.name, user %>
+      </li>
+    <% end %>
+    リファクタリング前の記述。分かり易いので残して置く
+    リファクタリング後ここでパーシャル読み込むが、パーシャル先にはeachはない
+    railsが@users渡すと自動でUserオブジェクトのコレクションだから列挙しよう、
+    みたいなことしてくれる
+    -->
+
+  
+ 
