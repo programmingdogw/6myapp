@@ -85,7 +85,9 @@
         <div>睡眠・通勤・勤務時間を除くとあと</div>
         <div id="TimeLeft2"></div>
         <div>秒ほど残されています</div>
-        
+         <%- if @user == current_user%>
+          <%= link_to "登録情報変更へ", edit_user_path(current_user) %>
+        <% end %>
     </div>
 
     
