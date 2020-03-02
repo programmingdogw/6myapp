@@ -4,9 +4,9 @@ $(function(){
   console.log(gon.time2)
   
   
-  // $(function() {
-  //   countDown();
-  // });
+  $(function() {
+    countDown();
+  });
  
  
 
@@ -38,11 +38,11 @@ function drawChart() {
 
 
 
-// function countDown() {
+function countDown() {
     
     
-//     $("#TimeLeft").text(gon.time2);
-//     gon.time2 = gon.time2 - 1
-//     setTimeout('countDown()', 1000);
+    $("#TimeLeft").text(gon.time2);
+    gon.time2 = gon.time2 - 1
+    setTimeout('countDown()', 1000);
     
-// };
+}; 

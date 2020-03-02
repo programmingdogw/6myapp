@@ -139,7 +139,7 @@ class UsersController < ApplicationController
     def gontime1
       @user = User.find(params[:id])
       date1 = @user.birthdate.in_time_zone.to_i
-      date2 = Date.today.in_time_zone.to_i
+      date2 = Time.now.in_time_zone.to_i
       date3 = @user.deathdate.in_time_zone.to_i
       date4 = date1.to_f
       date5 = date2.to_f
@@ -150,7 +150,7 @@ class UsersController < ApplicationController
     def gontime2
       @user = User.find(params[:id])
       date1 = @user.birthdate.in_time_zone.to_i
-      date2 = Date.today.in_time_zone.to_i
+      date2 = Time.now.in_time_zone.to_i
       date3 = @user.deathdate.in_time_zone.to_i
       date4 = date1.to_f
       date5 = date2.to_f
