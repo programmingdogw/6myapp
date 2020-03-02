@@ -49,12 +49,14 @@
 <div class="row box">
   <div class="left-right-wrapper">
 
-    <div class=" leftside2 col-6">
+    <div class=" leftside2 col-8">
       <div id="piechart" class="piechart"></div>
     </div>
+    <!-- 一旦コメントアウト中
+
     <div class="rightside2 col-3"> 
 
-    <%# 残り時間計算パート コントローラーで計算してjsの関数で表示しているのでrightside2の左半分が不要なら不要%>
+    <%# 残り時間計算パート コントローラーで計算してjsの関数で表示しているのでrightside2の左半分の数値が不要なら不要%>
       <% date1 = @user.birthdate.to_time.to_i
       date2 = Time.now.to_time.to_i
       date3 = @user.deathdate.to_time.to_i
@@ -73,6 +75,8 @@
       <p>あと<%= difference/60/60/24/30%>ヶ月で死にます</p>
       <p>あと<%= difference/60/60/24/30/12%>年で死にます</p>
     </div>
+
+    -->
 
     <div class="rightside2 col-3"> 
         <div>カウントダウン中</div>
