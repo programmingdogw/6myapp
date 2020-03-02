@@ -20,6 +20,10 @@ class UsersController < ApplicationController
 
     gon.time1 = gontime1
     gon.time2 = gontime2
+    gon.time3 = gontime3
+    gon.time4 = gontime4
+    gon.time5 = gontime5
+    gon.time6 = gontime6
 
 
     @done_point_count = Todo.where(user_id: @user.id).where(todo: nil).count * 1000
@@ -144,7 +148,7 @@ class UsersController < ApplicationController
       date4 = date1.to_f
       date5 = date2.to_f
       date6 = date3.to_f
-      gontime1 = (date5 - date4)
+      passedtime = (date5 - date4)
     end
 
     def gontime2
@@ -155,8 +159,56 @@ class UsersController < ApplicationController
       date4 = date1.to_f
       date5 = date2.to_f
       date6 = date3.to_f
-      gontime2 = (date6 - date5)
+      lefttime = (date6 - date5)
+    end
+
+    def gontime3
+      @user = User.find(params[:id])
+      date1 = @user.birthdate.in_time_zone.to_i
+      date2 = Time.now.in_time_zone.to_i
+      date3 = @user.deathdate.in_time_zone.to_i
+      date4 = date1.to_f
+      date5 = date2.to_f
+      date6 = date3.to_f
+      sleepingtime = ((date6 - date5) * @user.sleepingtime) / 24.0
+    end
+
+    def gontime4
+      @user = User.find(params[:id])
+      date1 = @user.birthdate.in_time_zone.to_i
+      date2 = Time.now.in_time_zone.to_i
+      date3 = @user.deathdate.in_time_zone.to_i
+      date4 = date1.to_f
+      date5 = date2.to_f
+      date6 = date3.to_f
+      commutingtime = ((date6 - date5) * @user.commutingtime) / 24.0
     end
  
+
+
+    def gontime5
+      @user = User.find(params[:id])
+      date1 = @user.birthdate.in_time_zone.to_i
+      date2 = Time.now.in_time_zone.to_i
+      date3 = @user.deathdate.in_time_zone.to_i
+      date4 = date1.to_f
+      date5 = date2.to_f
+      date6 = date3.to_f
+      workingtime = ((date6 - date5) * @user.workingtime) / 24.0
+    end
+
+
+    def gontime6
+      @user = User.find(params[:id])
+      date1 = @user.birthdate.in_time_zone.to_i
+      date2 = Time.now.in_time_zone.to_i
+      date3 = @user.deathdate.in_time_zone.to_i
+      date4 = date1.to_f
+      date5 = date2.to_f
+      date6 = date3.to_f
+      truelefttime = ((date6 - date5) * (24.0 - @user.sleepingtime - @user.commutingtime - @user.workingtime) ) / 24.0
+    end
+
+
 
 end
