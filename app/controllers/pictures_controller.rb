@@ -4,7 +4,7 @@ class PicturesController < ApplicationController
 
   def index
     @picture = Picture.new
-    @pictures = Picture.where(user_id: params[:user_id]).paginate(page:params[:page], per_page:6)
+    @pictures = Picture.where(user_id: params[:user_id]).paginate(page:params[:page], per_page:4)
     @user = User.find_by(id: params[:user_id])
   end
 

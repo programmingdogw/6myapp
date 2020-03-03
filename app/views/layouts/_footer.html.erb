@@ -1,14 +1,12 @@
 <footer class="">
-  <small>
-     <a href="https://www.google.com/?hl=ja">グーグル</a>
-     <%= link_to "実験", :controller=> 'static_pages', :action=> 'experiment' %> <br>
 
-  </small>
   <nav>
     <ul>
+      <li><%= link_to "実験1(要ログイン)", :controller=> 'static_pages', :action=> 'experiment' %></li>
       <li><%= link_to "免責事項",   about_path %></li>
       <li><%= link_to "連絡先", contact_path %></li>
-      <li><a href="https://www.yahoo.co.jp/">Yahoo!</a></li>
+     
     </ul>
   </nav>
+
 </footer>
