@@ -21,12 +21,12 @@
           <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
 
-      <div class ="main col-xs-7 col-md-9 col-lg-10 container">
+      <div class ="main col-xs-8 col-md-9 col-lg-10 container">
         <%= yield %>
         
       </div>
 
-      <div class="sidebar col-xs-5 col-md-3 col-lg-２ container h-100 ">
+      <div class="sidebar col-xs-4 col-md-3 col-lg-2 container h-100 ">
         <%= render 'layouts/header' %>
         <%= render 'layouts/footer' %>
       </div>

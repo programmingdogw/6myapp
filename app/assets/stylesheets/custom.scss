@@ -363,16 +363,24 @@ input {
 // ユーザー一覧
 .userindexcontainer{
   min-width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 80%;
+}
+
+.userbox{
+  display: flex;
+  margin: auto;
+  width: 900px;
+  overflow: auto;
 }
 
 .indexuserwrapper{
   display: flex;
 }
 
-.indexusername{
-  text-align: center;
-  width:180px;
-}
+
 
 
 // その他
@@ -383,4 +391,17 @@ input {
 .litodoli{
   overflow-x: auto;
 }
+
+
+
+
+
+.picturebox{
+  display: flex;
+  margin: auto;
+  width: 900px;
+  overflow: auto;
+}
+
+
 

@@ -49,6 +49,8 @@
 
 <%= will_paginate %>
 
+<div class=" picturebox">
+
 <div class="row box">
   <% @pictures.each do |picture| %>
     <%- if picture.image? %>
@@ -60,3 +62,4 @@
   <% end %>
 </div>
 
+</div>

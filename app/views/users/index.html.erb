@@ -5,37 +5,31 @@
 
 <div class="container userindexcontainer">
 
-    <div class="row box">
+    <div class=" userbox">
 
     <% @users.each do |user| %>
-                    
+
+                <div class="">    
                 <%- if user.image? %>
 
-                    <%= image_tag user.image, :size =>'180x180', class:"" %>
+                    <%= image_tag user.image, :size =>'360x360', class:"" %>
                 <% else %>
-                    <%= image_tag 'noimage.png', :size =>'180x180', class:"" %>
+                    <%= image_tag 'noimage.png', :size =>'360x360', class:"" %>
             
                 <% end %> 
+                </div >
+
+                <div class="">
+                <%= link_to user.name, user %>
+                </div >
 
     <% end %>
 
     </div>
 
-    <div class="row box">
-        <div class= indexuserwrapper>
-            <% @users.each do |user| %>
-            
-                <div class="indexusername">
-                <%= link_to user.name, user %>
-                </div >
-            
-            <% end %>
-        </div>
-    </div>
-
-
-
 </div>
+
+<div class="pagenation"><%= will_paginate %> </div>
 
 
 
