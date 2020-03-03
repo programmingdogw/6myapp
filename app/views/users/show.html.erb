@@ -96,6 +96,9 @@
         <div class="editbtnpart">
           <%- if @user == current_user%>
             <%= link_to "登録情報変更へ", edit_user_path(current_user), class: "charteditbtn" %>
+          <% else %>
+            <strong>この部分は</strong><br>
+            <strong>このページ人だけが使えるよ</strong>
           <% end %>
         </div>
 
@@ -152,7 +155,7 @@
           <div class="pointupdate">
           <%= form_for(@user, url: {controller: 'users', action: 'point' }) do |f| %>
           <%= f.hidden_field :point, :value => @done_point_count %>
-          <%= f.submit "ポイントを使う", class: "" %>
+          <%= f.submit "ポイントの反映へ", class: "" %>
           <% end %>
           </div><br>
         <% end %>
@@ -166,6 +169,11 @@
           <%= f.submit "ランキングへ", class: "" %>
           <% end %>
           </div><br>
+          <% else %>
+          <br>
+          <br>
+          <strong>この部分は</strong><br>
+          <strong>このページ人だけが使えるよ</strong>  
         <% end %>
 
        
