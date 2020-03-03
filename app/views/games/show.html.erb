@@ -1,3 +1,35 @@
 
 <h1>  <%= @user.name%>さんが購入したゲーム </h1>
 <h1>  <%= @game.name%>をプレイするためのページ </h1>
+
+
+
+<div id="app">
+
+
+<p>{{myTea}}</p>
+<p>{{myTea[1].name}}¥{{myTea[1].price}}</p>
+
+
+
+</div>
+
+
+
+
+<script>
+
+  var tealist =[
+    {name:'ダージリン', price:600},
+    {name:'アールグレイ', price:500},
+    {name:'セイロン', price:500},
+  ];
+
+  new Vue({
+    el:'#app',
+    data:{
+      myTea: tealist
+    }
+  })
+
+</script>
