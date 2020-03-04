@@ -1,28 +1,31 @@
 部分テンプレートゲームid１<br>
 
-カウントアップタイマー<br>
+色当てゲーム<br>
 
 <div id="app">
 
-<p>{{message}}<p>
-<p>{{count}}<p>
-<button v-on:click="countUp">１増やす</button>
+<p v-bind:style="{backgroundColor: mixColor}"/> {{mixColor}}</p>
+<input type="range" v-model="R" min="0" max="255"/><br>
+<input type="range" v-model="G" min="0" max="255"/><br>
+<input type="range" v-model="B" min="0" max="255"/><br>
 
 </div>
 
 <script>
+
 new Vue({
-  el: "#app",
+  el:"#app",
   data:{
-    message: 'hello, world',
-    count: 0,
+    R:255,
+    G:255,
+    B:255
   },
-  methods:{
-    countUp: function(){
-      this.count++;
+  computed:{
+    mixColor: function(){
+      var ans = "RGB("+this.R+","+this.G+","+this.B+")";
+      return ans;
     }
   }
-
 })
 
 
