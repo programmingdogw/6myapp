@@ -36,17 +36,17 @@ User.create!(name:  "Example User watawata",
 
 
 Game.create!(
-  name: "ファイナルドラゴン3",
+  name: "色彩感覚の達人（イージー）",
   cost: "100"
 )
 
 Game.create!(
-  name: "ファンタジークエスト7",
+  name: "色彩感覚の達人（ノーマル）",
   cost: "50"
 )
 
 Game.create!(
-  name: "ダンシングサーガ2",
+  name: "色彩感覚の達人（ハード）",
   cost: "5"
 )
 
