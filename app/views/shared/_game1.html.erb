@@ -2,7 +2,8 @@
 
 色当てゲーム<br>
 
-<div id="app">
+<%# ユーザーが操作する部分 %>
+<div id="rgbapp">
 
 <p v-bind:style="{backgroundColor: mixColor}"/> {{mixColor}}</p>
 <input type="range" v-model="R" min="0" max="255"/><br>
@@ -11,14 +12,33 @@
 
 </div>
 
+<%# ランダムに色を表示する部分 %>
+<div id="randomcolorapp">
+
+<p v-bind:style="{backgroundColor: randomColor}"/> {{randomColor}}</p>
+
+</div>
+
+
+<%# vue.jsのスクリプト部分 %>
 <script>
 
+// Vueインスタン内で使う関数の定義
+var random255 =function(){
+    var min = 0 ;
+    var max = 255 ;
+    var random255 = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+    return random255
+    }
+
+
+// Vueインスタンス
 new Vue({
-  el:"#app",
+  el:"#rgbapp",
   data:{
-    R:255,
-    G:255,
-    B:255
+    R:123,
+    G:123,
+    B:123
   },
   computed:{
     mixColor: function(){
@@ -29,9 +49,26 @@ new Vue({
 })
 
 
+new Vue({
+  el:"#randomcolorapp",
+  data:{
+    R:random255(),
+    G:random255(),
+    B:random255()
+  },
+  computed:{
+    randomColor: function(){
+      var ans = "RGB("+this.R+","+this.G+","+this.B+")";
+      return ans;
+    }
+  }
+
+    
+})
+
 </script>
 
+
+<%# このページに関するスタイル部分 %>
 <style>
-
-
 </style>
