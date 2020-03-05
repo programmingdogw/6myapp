@@ -10,9 +10,20 @@
 
     <%# アプリ部分 %>
     <div id="timercountapp">
+
+      <p>設定タイム{{random60}}秒</p>
       <p>今{{resetSec}}秒</p>
       <button v-on:click="startTimer">Start</button>
-      <button v-on:click="stopTimer">Stop</button>
+      <button @click="stopTimer(); beforeafter()">Stop</button>
+
+      <div v-bind:style="{opacity:noneorshow}">
+        <p class= "gameclear" v-if="(random60 - resetSec) <= 100"/> 
+          {{text}}
+        </p>
+        <p v-if="true"/>
+          <input type="button" value="もう一度遊ぶ" onclick="window.location.reload(true);">
+        </p>
+      </div>
 
     </div>
 
@@ -24,15 +35,27 @@
 <script>
 
   // Vueインスタン内で使う関数の定義
+
+  var random60 =function(){
+      var min = 0 ;
+      var max = 60 ;
+      var random60 = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+      return random60
+      }
+  
       
 
 
   // Vueインスタンス
-  new Vue({
+new Vue({
     el:"#timercountapp",
     data:{
       resetSec: 0,
       timerObj:null,
+      random60: random60(),
+      text: "クリアですおめでとうございます!!",
+      failtext:"残念、失敗です！！",
+      noneorshow: '0',
     },
 
     methods:{
@@ -44,9 +67,15 @@
 
       stopTimer:function(){
         clearInterval(this.timerObj);
-      }
+      },
+
+      beforeafter:function(){
+        this.noneorshow = '1'
+      },
+
     },
 
+   
 
 
     watch:{
@@ -59,9 +88,14 @@
       }
 
       }
+
+      
     
 
-  })  
+})  
+
+
+
 
 
 </script>
@@ -69,4 +103,6 @@
 
 
 
-<%# 各種ゲームページのスタイルはgames.scssに記載 %>
+<%# 各種ゲームページの共通スタイルはgames.scssに記載 %>
+
+
