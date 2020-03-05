@@ -1,6 +1,7 @@
 
-<h1>  <%= @user.name%>さんが購入したゲーム </h1>
-<h1>  <%= @game.name%>をプレイするためのページ </h1>
+<h1>  ようこそ<%= @user.name%>さん </h1>
+<h4>  <%= @game.name%>を遊んでくれてありがとうございます</h4>
+
 
 <%- if @game.id == 1 %>
 <%= render 'shared/game1' %>

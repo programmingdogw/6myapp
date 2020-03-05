@@ -1,10 +1,15 @@
 
 <div class="container rgbgamebox">
-    部分テンプレートゲームid１<br>
 
-    色当てゲームイージーモード<br>
+  <div class="gameexplanation">
+    <strong>ゲームの説明</strong><br>
+    ポインターを動かすと上のバーの色が変わります<br>
+    下のバーに表示されている色に一致するとゲームクリアです<br>
+    イージーモードではRGBの数値が見える状態です<br>
+  </div>
 
-    <%# ユーザーが操作する部分 %>
+
+    <%# アプリ部分 %>
     <div id="rgbapp">
 
     <p v-bind:style="{backgroundColor: mixColor}"/> {{mixColor}}</p>
@@ -14,13 +19,15 @@
 
     <p v-bind:style="{backgroundColor: randomColor}"/> {{randomColor}}</p>
 
-    <p v-if="mixColor == randomColor"/> 
-    {{text}}<br>
-    <input type="button" value="もう一度遊ぶ"
-            onclick="window.location.reload(true);">
+    <p class= "gameclear" v-if="mixColor == randomColor"/> 
+    {{text}}
+    </p>
+    <p v-if="mixColor == randomColor"/>
+    <input type="button" value="もう一度遊ぶ" onclick="window.location.reload(true);">
     </p>
 
     </div>
+
 </div>
 
 
@@ -48,7 +55,7 @@
       randomR:random255(),
       randomG:random255(),
       randomB:random255(),
-      text:"クリアです"
+      text:"クリアです!!"
     },
     computed:{
       mixColor: function(){
