@@ -14,7 +14,7 @@
       <p>設定タイム{{random60}}秒</p>
       <p>今{{resetSec}}秒</p>
       <button v-on:click="startTimer">Start</button>
-      <button @click="stopTimer(); beforeafter()">Stop</button>
+      <button @click="stopTimer(); showbtn()">Stop</button>
 
       <div v-bind:style="{opacity:noneorshow}">
         <p class= "gameclear" v-if="(random60 - resetSec) <= 100"/> 
@@ -69,7 +69,7 @@ new Vue({
         clearInterval(this.timerObj);
       },
 
-      beforeafter:function(){
+      showbtn:function(){
         this.noneorshow = '1'
       },
 
