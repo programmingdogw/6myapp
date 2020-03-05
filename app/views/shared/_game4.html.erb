@@ -3,26 +3,38 @@
 
   <div class="gameexplanation">
     <strong>ゲームの説明</strong><br>
-    タイマーに関するゲーム設置予定<br>
+    体内時計の正確さを試すゲーム<br>
+    設定タイムになるべく近い時間を目指そう<br>
+    設定タイムを超えてしまうと失敗<br>
+    許容誤差以内でSTOPできたらクリア<br>
     
   </div>
 
 
     <%# アプリ部分 %>
-    <div id="timercountapp">
+    <div class="gamecontentsbox">
 
-      <p>設定タイム{{random60}}秒</p>
-      <p>今{{resetSec}}秒</p>
-      <button v-on:click="startTimer">Start</button>
-      <button @click="stopTimer(); showbtn()">Stop</button>
+      <div id="timercountapp">
 
-      <div v-bind:style="{opacity:noneorshow}">
-        <p class= "gameclear" v-if="(random60 - resetSec) <= 100"/> 
-          {{text}}
-        </p>
-        <p v-if="true"/>
-          <input type="button" value="もう一度遊ぶ" onclick="window.location.reload(true);">
-        </p>
+        <p>設定タイム{{random60}}秒</p>
+        
+        <p>許容誤差10秒</p>
+        <button v-on:click="startTimer">Start</button>
+        <button @click="stopTimer(); showbtn()">Stop</button>
+
+        <div v-bind:style="{opacity:noneorshow}">
+          <p class= "gameclear" v-if="(random60 - resetSec) <= 10 && random60 >= resetSec"/> 
+            {{text}}
+          </p>
+          
+          <p v-else class= "gamefail">{{failtext}}</p>
+
+          <p class= "gameseconds">今{{resetSec}}秒でした</p>
+          <p v-if="true"/>
+            <input type="button" value="もう一度遊ぶ" onclick="window.location.reload(true);">
+          </p>
+        </div>
+
       </div>
 
     </div>
@@ -72,6 +84,8 @@ new Vue({
       showbtn:function(){
         this.noneorshow = '1'
       },
+
+      
 
     },
 
