@@ -1,3 +1,30 @@
 
 <h1>  <%= @user.name%>さんが購入したゲーム </h1>
 <h1>  <%= @game.name%>をプレイするためのページ </h1>
+
+<%- if @game.id == 1 %>
+<%= render 'shared/game1' %>
+<% end %>
+
+
+<%- if @game.id == 2 %>
+<%= render 'shared/game2' %>
+<% end %>
+
+<%- if @game.id == 3 %>
+<%= render 'shared/game3' %>
+<% end %>
+
+<%- if @game.id == 4 %>
+<%= render 'shared/game4' %>
+<% end %>
+
+<%- if @game.id == 5 %>
+<%= render 'shared/game5' %>
+<% end %>
+
+<%- if @game.id == 6 %>
+<%= render 'shared/game6' %>
+<% end %>
+
+
