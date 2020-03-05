@@ -1,3 +1,4 @@
+
 部分テンプレートゲームid１<br>
 
 色当てゲーム<br>
@@ -10,14 +11,13 @@
 <input type="range" v-model="G" min="0" max="255"/><br>
 <input type="range" v-model="B" min="0" max="255"/><br>
 
-</div>
-
-<%# ランダムに色を表示する部分 %>
-<div id="randomcolorapp">
-
 <p v-bind:style="{backgroundColor: randomColor}"/> {{randomColor}}</p>
 
+<p v-if="true"/> {{text}}</p>
 </div>
+
+
+
 
 
 <%# vue.jsのスクリプト部分 %>
@@ -30,6 +30,7 @@ var random255 =function(){
     var random255 = Math.floor( Math.random() * (max + 1 - min) ) + min ;
     return random255
     }
+     
 
 
 // Vueインスタンス
@@ -38,33 +39,32 @@ new Vue({
   data:{
     R:123,
     G:123,
-    B:123
+    B:123,
+    randomR:random255(),
+    randomG:random255(),
+    randomB:random255(),
+    text:"ステージクリアです"
   },
   computed:{
     mixColor: function(){
-      var ans = "RGB("+this.R+","+this.G+","+this.B+")";
-      return ans;
-    }
-  }
-})
+      var mixColor = "RGB("+this.R+","+this.G+","+this.B+")";
+      return mixColor;
+    },
 
-
-new Vue({
-  el:"#randomcolorapp",
-  data:{
-    R:random255(),
-    G:random255(),
-    B:random255()
-  },
-  computed:{
     randomColor: function(){
-      var ans = "RGB("+this.R+","+this.G+","+this.B+")";
-      return ans;
-    }
-  }
+      var randomColor = "RGB("+this.randomR+","+this.randomG+","+this.randomB+")";
+      return randomColor;
+    },
+  },
 
-    
+
 })
+
+
+
+
+
+
 
 </script>
 
