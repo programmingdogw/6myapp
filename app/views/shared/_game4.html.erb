@@ -10,7 +10,8 @@
 
     <%# アプリ部分 %>
     <div id="timercountapp">
-
+      <p>あと{{resetSec}}秒</p>
+      <button v-on:click="startTimer">Start</button>
     
 
     </div>
@@ -27,8 +28,38 @@
 
 
   // Vueインスタンス
-  
-  
+  new Vue({
+    el:"#timercountapp",
+    data:{
+      resetSec: 5,
+      timerObj:null,
+    },
+
+    methods:{
+      startTimer:function(){
+        // 残り５秒
+        this.resetSec = 5;
+        // タイマースタート。１秒毎に１減らす。
+        this.timerObj = setInterval(() => {this.resetSec--}, 1000);
+      }
+    },
+
+    watch:{
+      // 残り秒数を監視する
+      resetSec: function(){
+        // 0秒以下になったらアラート＆タイマー 停止
+        if(this.resetSec <= 0){
+          alert("制限時間です");
+          clearInterval(this.timerObj);
+        }
+      }
+
+      }
+    
+
+  })  
+
+
 </script>
 
 
