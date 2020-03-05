@@ -7,7 +7,7 @@
     設定タイムになるべく近い時間を目指そう<br>
     設定タイムを超えてしまうと失敗<br>
     許容誤差以内でSTOPできたらクリア<br>
-    イージモードの許容誤差は10秒です<br>
+    ハードモードの許容誤差は１秒です<br>
     
   </div>
 
@@ -24,7 +24,7 @@
         <button @click="stopTimer(); showbtn()">Stop</button>
 
         <div v-bind:style="{opacity:noneorshow}">
-          <p class= "gameclear" v-if="(random60 - resetSec) <= 10 && random60 >= resetSec"/> 
+          <p class= "gameclear" v-if="(random60 - resetSec) <= 5 && random60 >= resetSec"/> 
             {{text}}
           </p>
           

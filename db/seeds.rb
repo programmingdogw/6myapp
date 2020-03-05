@@ -51,18 +51,28 @@ Game.create!(
 )
 
 Game.create!(
-  name: "岩マンX",
-  cost: "777"
+  name: "体内時計測定器（イージー）",
+  cost: "77"
 )
 
 Game.create!(
-  name: "デモンズ魂",
-  cost: "1000"
+  name: "体内時計測定器（ノーマル）",
+  cost: "222"
 )
 
 Game.create!(
-  name: "ブラックソウル3",
-  cost: "3000"
+  name: "体内時計測定器（ハード）",
+  cost: "321"
+)
+
+Game.create!(
+  name: "シロノトリガー",
+  cost: " 1999"
+)
+
+Game.create!(
+  name: "ファイナルクエスト１３ー３雷帰還",
+  cost: " 100"
 )
 
 Game.create!(
@@ -72,36 +82,36 @@ Game.create!(
 
 Game.create!(
   name: "ブラックソウル1",
-  cost: "13000"
+  cost: "1000"
 )
 
 Game.create!(
   name: "一匹狼",
-  cost: "250"
+  cost: "25000"
 )
 
 Game.create!(
-  name: "仮面４ゴールデン",
-  cost: "444"
+  name: "カメン４ゴールデン",
+  cost: "4444"
 )
 
 Game.create!(
-  name: "仮面５ロイヤル",
-  cost: "555"
+  name: "カメン５ロイヤル",
+  cost: "5555"
 )
 
 Game.create!(
-  name: "仮面3フェス",
+  name: "カメン３フェス",
   cost: "333"
 )
 
 Game.create!(
-  name: "仮面２罪",
+  name: "カメン２罪",
   cost: "222"
 )
 
 Game.create!(
-  name: "仮面２罰",
+  name: "カメン２罰",
   cost: "222"
 )
 
