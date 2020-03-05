@@ -1,0 +1,123 @@
+
+<div class="container rgbgamebox">
+
+  <div class="gameexplanation">
+    <strong>ゲームの説明</strong><br>
+    体内時計の正確さを試すゲーム<br>
+    設定タイムになるべく近い時間を目指そう<br>
+    設定タイムを超えてしまうと失敗<br>
+    許容誤差以内でSTOPできたらクリア<br>
+    ハードモードの許容誤差は１秒です<br>
+    
+  </div>
+
+
+    <%# アプリ部分 %>
+    <div class="gamecontentsbox">
+
+      <div id="timercountapp">
+
+        <p>設定タイム{{random60}}秒</p>
+        
+        <p>許容誤差1秒</p>
+        <button v-on:click="startTimer">Start</button>
+        <button @click="stopTimer(); showbtn()">Stop</button>
+
+        <div v-bind:style="{opacity:noneorshow}">
+          <p class= "gameclear" v-if="(random60 - resetSec) <= 5 && random60 >= resetSec"/> 
+            {{text}}
+          </p>
+          
+          <p v-else class= "gamefail">{{failtext}}</p>
+
+          <p class= "gameseconds">今{{resetSec}}秒でした</p>
+          <p v-if="true"/>
+            <input type="button" value="もう一度遊ぶ" onclick="window.location.reload(true);">
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+</div>
+
+
+
+<%# vue.jsのスクリプト部分 %>
+<script>
+
+  // Vueインスタン内で使う関数の定義
+
+  var random60 =function(){
+      var min = 0 ;
+      var max = 60 ;
+      var random60 = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+      return random60
+      }
+  
+      
+
+
+  // Vueインスタンス
+new Vue({
+    el:"#timercountapp",
+    data:{
+      resetSec: 0,
+      timerObj:null,
+      random60: random60(),
+      text: "クリアですおめでとうございます!!",
+      failtext:"残念、失敗です！！",
+      noneorshow: '0',
+    },
+
+    methods:{
+      startTimer:function(){
+        this.resetSec = 0;
+        this.timerObj = setInterval(() => {this.resetSec++}, 1000);
+      },
+
+
+      stopTimer:function(){
+        clearInterval(this.timerObj);
+      },
+
+      showbtn:function(){
+        this.noneorshow = '1'
+      },
+
+      
+
+    },
+
+   
+
+
+    watch:{
+      // 秒数を監視する
+      resetSec: function(){
+        // 100秒になったらタイマー 停止
+        if(this.resetSec >= 10000){
+          clearInterval(this.timerObj);
+        }
+      }
+
+      }
+
+      
+    
+
+})  
+
+
+
+
+
+</script>
+
+
+
+
+<%# 各種ゲームページの共通スタイルはgames.scssに記載 %>
+
+

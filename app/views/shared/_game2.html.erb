@@ -1,79 +1,80 @@
 
-部分テンプレートゲームid２<br>
+<div class="container rgbgamebox">
 
-色当てゲームノーマルモード予定<br>
+  <div class="gameexplanation">
+    <strong>ゲームの説明</strong><br>
+    ポインターを動かすと上のバーの色が変わります<br>
+    下のバーに表示されている色に一致するとゲームクリアです<br>
+    ノーマルモードでは自分のRGBの数値が見えなくなります状態です<br>
+  </div>
 
-<%# ユーザーが操作する部分 %>
-<div id="rgbapp">
 
-<p v-bind:style="{backgroundColor: mixColor}"/> {{mixColor}}</p>
-<input type="range" v-model="R" min="0" max="255"/><br>
-<input type="range" v-model="G" min="0" max="255"/><br>
-<input type="range" v-model="B" min="0" max="255"/><br>
+    <%# アプリ部分 %>
+    <div id="rgbapp">
 
-<p v-bind:style="{backgroundColor: randomColor}"/> {{randomColor}}</p>
+    <p class="invisiblefont" v-bind:style="{backgroundColor: mixColor}"/> {{mixColor}}</p>
+    <input type="range" v-model="R" min="0" max="255"/><br>
+    <input type="range" v-model="G" min="0" max="255"/><br>
+    <input type="range" v-model="B" min="0" max="255"/><br>
 
-<p v-if="mixColor == randomColor"/> 
-{{text}}<br>
-<input type="button" value="もう一度遊ぶ"
-        onclick="window.location.reload(true);">
-</p>
+    <p v-bind:style="{backgroundColor: randomColor}"/> {{randomColor}}</p>
+
+    <p class= "gameclear" v-if="mixColor == randomColor"/> 
+    {{text}}
+    </p>
+    <p v-if="mixColor == randomColor"/>
+    <input type="button" value="もう一度遊ぶ" onclick="window.location.reload(true);">
+    </p>
+
+    </div>
 
 </div>
-
-
 
 
 
 <%# vue.jsのスクリプト部分 %>
 <script>
 
-// Vueインスタン内で使う関数の定義
-var random255 =function(){
-    var min = 0 ;
-    var max = 255 ;
-    var random255 = Math.floor( Math.random() * (max + 1 - min) ) + min ;
-    return random255
-    }
-     
+  // Vueインスタン内で使う関数の定義
+  var random255 =function(){
+      var min = 0 ;
+      var max = 255 ;
+      var random255 = Math.floor( Math.random() * (max + 1 - min) ) + min ;
+      return random255
+      }
+      
 
 
-// Vueインスタンス
-new Vue({
-  el:"#rgbapp",
-  data:{
-    R:123,
-    G:123,
-    B:123,
-    randomR:random255(),
-    randomG:random255(),
-    randomB:random255(),
-    text:"クリアです"
-  },
-  computed:{
-    mixColor: function(){
-      var mixColor = "RGB("+this.R+","+this.G+","+this.B+")";
-      return mixColor;
+  // Vueインスタンス
+  new Vue({
+    el:"#rgbapp",
+    data:{
+      R:123,
+      G:123,
+      B:123,
+      randomR:random255(),
+      randomG:random255(),
+      randomB:random255(),
+      text:"クリアです!!"
+    },
+    computed:{
+      mixColor: function(){
+        var mixColor = "RGB("+this.R+","+this.G+","+this.B+")";
+        return mixColor;
+      },
+
+      randomColor: function(){
+        var randomColor = "RGB("+this.randomR+","+this.randomG+","+this.randomB+")";
+        return randomColor;
+      },
     },
 
-    randomColor: function(){
-      var randomColor = "RGB("+this.randomR+","+this.randomG+","+this.randomB+")";
-      return randomColor;
-    },
-  },
 
-
-})
-
-
-
-
-
-
+  })
 
 </script>
 
 
-<%# このページに関するスタイル部分 %>
-<style>
-</style>
+
+
+<%# 各種ゲームページのスタイルはgames.scssに記載 %>

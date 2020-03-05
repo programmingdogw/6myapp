@@ -10,3 +10,40 @@
 .rgbgamebox{
   width: 80%;
 }
+
+.gameexplanation{
+  color: white;
+  margin-bottom: 20px;
+  background: 
+  rgba(0,0,0,0.4);
+}
+
+.gameclear{
+  text-align: center;
+  font-size: larger;
+  color: blue;
+  margin-bottom: 20px;
+}
+.gamefail{
+  text-align: center;
+  font-size: larger;
+  color:red;
+  margin-bottom: 20px;
+}
+
+.gameseconds{
+  text-align: center;
+  font-size: larger;
+  color: purple;
+  margin-bottom: 20px;
+}
+
+.invisiblefont{
+  color: rgba(0,0,0,0.0)
+}
+
+.gamecontentsbox{
+  background-color: lightgreen;
+  text-align: center;
+  font-size: larger;
+}
