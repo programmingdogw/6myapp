@@ -16,6 +16,8 @@ User.create!(name:  "Example User watawata",
   sleepingtime: '7.0',
   commutingtime: '1.0',
   workingtime: '8.0',
+  point: '0',
+  usedpoint: '0',
   admin:true)
 
 99.times do |n|
@@ -31,6 +33,8 @@ User.create!(name:  name,
     sleepingtime: '7.0',
     commutingtime: '1.0',
     workingtime: '8.0',
+    point: '0',
+    usedpoint: '0',
     )
   end
 
