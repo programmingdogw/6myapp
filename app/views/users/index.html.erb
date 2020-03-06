@@ -9,6 +9,7 @@
 
     <% @users.each do |user| %>
 
+                <label>  
                 <div class="">    
                 <%- if user.image? %>
 
@@ -22,6 +23,7 @@
                 <div class="">
                 <%= link_to user.name, user %>
                 </div >
+                </label>
 
     <% end %>
 
