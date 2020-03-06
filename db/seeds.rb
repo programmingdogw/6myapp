@@ -16,23 +16,27 @@ User.create!(name:  "Example User watawata",
   sleepingtime: '7.0',
   commutingtime: '1.0',
   workingtime: '8.0',
+  point: '0',
+  usedpoint: '0',
   admin:true)
 
-# 99.times do |n|
-# name  = Faker::Name.name
-# email = "example-#{n+1}@railstutorial.org"
-# password = "password"
-# User.create!(name:  name,
-#     email: email,
-#     password:              password,
-#     password_confirmation: password,
-#     birthdate: '1985-08-17',
-#     deathdate: '2050-11-19',
-#     sleepingtime: '7.0',
-#     commutingtime: '1.0',
-#     workingtime: '8.0',
-#     )
-#   end
+99.times do |n|
+name  = Faker::Name.name
+email = "example-#{n+1}@railstutorial.org"
+password = "password"
+User.create!(name:  name,
+    email: email,
+    password:              password,
+    password_confirmation: password,
+    birthdate: '1985-08-17',
+    deathdate: '2050-11-19',
+    sleepingtime: '7.0',
+    commutingtime: '1.0',
+    workingtime: '8.0',
+    point: '0',
+    usedpoint: '0',
+    )
+  end
 
 
 Game.create!(
