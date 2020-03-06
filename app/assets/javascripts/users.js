@@ -34,7 +34,7 @@ function drawChart() {
     ]);
     var options = { //オプションの指定
         pieSliceText: 'label',
-        title: 'あなたの残りの人生'
+        title: '一生の内訳'
     };
     var chart = new google.visualization.PieChart(document.getElementById('piechart')); //グラフを表示させる要素の指定
     chart.draw(data, options);

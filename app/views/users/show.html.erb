@@ -15,7 +15,7 @@
 
     <div class=" leftside1 col-6">
       <%- if @user.image%>
-      あなたの人生でのベストショット<br>
+      <%= @user.name %>さんのベストショット<br>
       <%= image_tag @user.image, :size =>"400x300" %><br>
       <% end%>
     </div>
@@ -98,7 +98,7 @@
             <%= link_to "登録情報変更へ", edit_user_path(current_user), class: "charteditbtn" %>
           <% else %>
             <strong>この部分は</strong><br>
-            <strong>このページ人だけが使えるよ</strong>
+            <strong><%= @user.name %>だけが使えるよ</strong>
           <% end %>
         </div>
 
@@ -115,7 +115,7 @@
     
     <div class="panel panel-success">
       <div class="panel-heading">
-      <h3 class="panel-title">todoリスト</h3>
+      <h3 class="panel-title"><%= @user.name %>さんの目標</h3>
       </div>
       <ul class="todolist panel-body">
       
@@ -173,7 +173,7 @@
           <br>
           <br>
           <strong>この部分は</strong><br>
-          <strong>このページ人だけが使えるよ</strong>  
+          <strong><%= @user.name %>だけが使えるよ</strong>  
         <% end %>
 
        
