@@ -379,10 +379,10 @@ input {
 // ユーザー一覧
 .userindexcontainer{
   min-width: 400px;
-  margin: auto;
+  margin-left: 0px;
   margin-top: 50px;
   margin-bottom: 50px;
-  width: 80%;
+  width: 70%;
 }
 
 .userbox{
@@ -420,4 +420,23 @@ input {
 }
 
 
+.help-contact-about-box{
+  background: rgba(0,0,0,0.4);
+  width: 70%;
+  height: 700px;
+  margin: auto;
+  color: white;
+}
 
+
+
+
+.help-contact-about-explanation{
+  padding:20px;
+}
+
+.toppagesentence{
+  font-style: italic;
+  margin-left: -30px;
+  margin-top: 30px;
+}

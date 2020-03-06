@@ -24,7 +24,7 @@
         <button @click="stopTimer(); showbtn()">Stop</button>
 
         <div v-bind:style="{opacity:noneorshow}">
-          <p class= "gameclear" v-if="(random60 - resetSec) <= 5 && random60 >= resetSec"/> 
+          <p class= "gameclear" v-if="(random60 - resetSec) <= 1 && random60 >= resetSec"/> 
             {{text}}
           </p>
           

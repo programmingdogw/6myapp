@@ -26,13 +26,13 @@
       <%= f.label :死亡予定日 %>
       <%= f.date_select :deathdate, use_month_numbers: true, start_year: 2020, end_year:2120, class: 'form_control'%>
       
-      <%= f.label :１日何時間寝ますか？ %>
+      <%= f.label :残りの人生で１日平均何時間寝ますか？ %>
       <%= f.number_field :sleepingtime, step: "0.1" %>
 
-      <%= f.label :１日何時間通勤に使いますか？ %>
+      <%= f.label :残りの人生で１日平均何時間移動に使いますか？ %>
       <%= f.number_field :commutingtime, step: "0.1" %>
 
-      <%= f.label :１日何時間働きますか？ %>
+      <%= f.label :残りの人生で１日平均何時間働きますか？ %>
       <%= f.number_field :workingtime, step: "0.1" %>
 
 

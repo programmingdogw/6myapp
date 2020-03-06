@@ -38,7 +38,7 @@
                     <%= f.hidden_field :usedpoint, :value => (@user.usedpoint + game.cost) %>
                     <%= f.hidden_field :game_id, :value => game.id  %>
                     <%- if (@user.point - @user.usedpoint) >= game.cost%>
-                    <%= f.submit "購入", class: "purchasebtn" %>
+                      <%= f.submit "購入", class: "purchasebtn" %>
                     <% end %>
                 <% end %>
                 
@@ -69,3 +69,8 @@
 
   </div>
 </div>
+
+
+
+
+
