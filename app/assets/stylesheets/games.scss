@@ -6,7 +6,7 @@
 // 各種ゲームページ用のスタイル
 
 
-// 色当てゲーム系
+
 .rgbgamebox{
   width: 80%;
 }
@@ -46,4 +46,8 @@
   background-color: lightgreen;
   text-align: center;
   font-size: larger;
+}
+
+.countdowndisplay{
+  visibility: hidden;
 }
