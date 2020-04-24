@@ -20,8 +20,9 @@
         <p>設定タイム{{random60}}秒</p>
         
         <p>許容誤差1秒</p>
-        <button v-on:click="startTimer">Start</button>
-        <button @click="stopTimer(); showbtn()">Stop</button>
+        <button v-on:click="startTimer" class="countdownstart">Start</button>
+        <button @click="stopTimer(); showbtn()" class="countdownstop">Stop</button>        
+        <div class="countdowndisplay"> カウント中</div>
 
         <div v-bind:style="{opacity:noneorshow}">
           <p class= "gameclear" v-if="(random60 - resetSec) <= 1 && random60 >= resetSec"/> 
