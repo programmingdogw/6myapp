@@ -4,6 +4,9 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
+
+      <div class="forscroll">
+
       <%= render 'shared/error_messages' %>
 
       <%= f.label :ニックネーム %>
@@ -33,6 +36,8 @@
       <%= f.submit "Save changes", class: "btn btn-primary" %>
 
     <% end %>
+
+    </div>
 
 <!-- グラベーターの部分をコメントアウト中
     <div class="class_for_space"> </div>
