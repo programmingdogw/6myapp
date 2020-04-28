@@ -1,7 +1,7 @@
 
 # 機能紹介
 
-### スクールの受講期間が半分過ぎた頃に作った初の個人アプリ Your Life
+### スクールの受講期間が半分過ぎた頃（チーム開発に入る前）に作った初の個人アプリ Your Life
 ![portfolioyourlife](https://user-images.githubusercontent.com/59106983/80185337-25036180-8647-11ea-8ee4-4cfcd6d6734d.gif)
 
 ### 投稿した写真をスライドショーで閲覧出来るアルバム機能
