@@ -17,7 +17,7 @@
 ### 他のユーザーがどんなことを達成したか見てみるのも良いかも？
 ![portfolioyourlife3](https://user-images.githubusercontent.com/59106983/80185675-b4107980-8647-11ea-88b8-647e26e513a2.gif)
 
-### 達成ポイントを消費してゲームを購入可能（おまけ要素）（下記のゲーム以外はダミー）
+### 達成ポイントを消費してゲームを購入可能（おまけ要素）（後述のゲーム以外はダミー）
 ![portfoliyourlife6](https://user-images.githubusercontent.com/59106983/80295071-7710c800-87aa-11ea-930a-db41205631da.gif)
 
 ### 今までの獲得ポイントランキングを閲覧可能
