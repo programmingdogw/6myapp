@@ -1,3 +1,13 @@
+# 主に使用した言語・技術
+  - ruby
+  - ruby on rails
+  - haml
+  - sass
+  - bootstrap
+  - vue.js
+  - jQuery
+  - postgreSQL
+  - heroku
 
 # 機能紹介
 
