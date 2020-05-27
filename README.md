@@ -9,6 +9,13 @@
   - postgreSQL
   - heroku
 
+### 補足
+こちらのアプリではS３等を使用する予定はございませんので画像が一定期間後リンク切れとなります。そのため定期的にデータベースをクリーンにさせていただきますことをご了承ください。
+
+S3を使っているアプリもありますのでもしよろしければそちらもご覧ください
+http://18.180.245.39/
+
+
 ### スクールの受講期間が半分過ぎた頃（チーム開発に入る前）に作った初の個人アプリ Your Life
 https://afternoon-scrubland-33526.herokuapp.com/
 ![portfolioyourlife](https://user-images.githubusercontent.com/59106983/80185337-25036180-8647-11ea-8ee4-4cfcd6d6734d.gif)
