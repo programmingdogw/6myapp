@@ -88,5 +88,5 @@ parcentage = ( (date6 - date5) / (date6 - date4)).round(4)*100
 
 
 <% @pictures.each do |picture| %>
-  <%= image_tag picture.image, :size =>'120x120' %>
+  <%= image_tag picture.image.url, :size =>'120x120' %>
 <% end %>

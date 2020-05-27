@@ -16,7 +16,7 @@
     <div class=" leftside1 col-6">
       <%- if @user.image%>
       <%= @user.name %>さんのベストショット<br>
-      <%= image_tag @user.image, :size =>"400x300" %><br>
+      <%= image_tag @user.image.url, :size =>"400x300" %><br>
       <% end%>
     </div>
 
@@ -188,7 +188,7 @@
 
 <!--コメントアウト 実験用ページとほぼ同じお試しコード
 <% @pictures.each do |picture| %>
-  <%= image_tag picture.image, :size =>'120x120' %>
+  <%= image_tag picture.image.url, :size =>'120x120' %>
 <% end %>
 
 <%=@user%><br>
