@@ -17,7 +17,7 @@ http://18.180.245.39/
 
 
 ### とりあえず何か作ってみようと挑戦した初の個人アプリ Your Life
-https://afternoon-scrubland-33526.herokuapp.com/
+デプロイ先url https://afternoon-scrubland-33526.herokuapp.com/
 ![portfolioyourlife](https://user-images.githubusercontent.com/59106983/80185337-25036180-8647-11ea-8ee4-4cfcd6d6734d.gif)
 
 # 機能紹介
