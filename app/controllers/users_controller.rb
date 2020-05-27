@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
     @done_point_count = Todo.where(user_id: @user.id).where(todo: nil).count * 1000
 
-    
+
 
 
   end
