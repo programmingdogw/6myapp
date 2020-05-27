@@ -14,7 +14,7 @@
   <div class="left-right-wrapper">
 
     <div class=" leftside1 col-6">
-      <%- if @user.image%>
+      <%- if @user.image.url%>
       <%= @user.name %>さんのベストショット<br>
       <%= image_tag @user.image.url, :size =>"400x300" %><br>
       <% end%>
